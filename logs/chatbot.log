@@ -1,0 +1,2452 @@
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoLKXJGu7n6nAZ4rfHJ0VPLf7yYaE",
+  "object": "chat.completion",
+  "created": 1751338093,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => OUI
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[OPENAI] Prompt envoyé : Reformule cette phrase pour en faire une question complète destinée à un assistant d'université : "J'aime les maths"...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoLKpF6LTUMBQypw3dUlrYPopBiTf",
+  "object": "chat.completion",
+  "created": 1751338111,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[REFORMULATION] => Pourquoi est-ce que j'aime les maths ?
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoLKqIYixzyVlkR9V8jzbix9Wgags",
+  "object": "chat.completion",
+  "created": 1751338112,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoLL969CYYX2ci2qm6N98Ti7QRzqI",
+  "object": "chat.completion",
+  "created": 1751338131,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Quels sont les frais d'inscription ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.0883412063121795654296875,-0.01126720942556858062744140625,-0.010699517093598842620...
+[SIMILARITY] Nb total documents scannés : 322
+[SIMILARITY] Match ID=2 Score=0.795
+[SIMILARITY] Match ID=3 Score=0.737
+[SIMILARITY] Match ID=8 Score=0.632
+[SIMILARITY] Match ID=23 Score=0.786
+[SIMILARITY] Match ID=24 Score=0.646
+[SIMILARITY] Match ID=26 Score=0.766
+[SIMILARITY] Match ID=47 Score=0.791
+[SIMILARITY] Match ID=72 Score=0.787
+[SIMILARITY] Match ID=96 Score=0.631
+[SIMILARITY] Match ID=103 Score=0.607
+[SIMILARITY] Match ID=199 Score=0.989
+[SIMILARITY] Résultats pertinents trouvés : 11
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Les frais d’inscription s’él�...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoLLVyUjJ1G4K0ak91Fi3rYEYldbY",
+  "object": "chat.completion",
+  "created": 1751338153,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Quel est le programme de la licence en finance ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.15455205738544464111328125,0.0360231362283229827880859375,-0.0111365644261240959167...
+[SIMILARITY] Nb total documents scannés : 322
+[SIMILARITY] Match ID=3 Score=0.624
+[SIMILARITY] Match ID=271 Score=0.614
+[SIMILARITY] Match ID=286 Score=0.676
+[SIMILARITY] Résultats pertinents trouvés : 3
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Oui, l’IAM propose des licences ...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoLLkJNdaP1EqCZp3BW3AfcivzXWn",
+  "object": "chat.completion",
+  "created": 1751338168,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Tu peux me raconter une blague ?
+[EMBEDDING] Réponse reçue : {"embedding":[0.21406199038028717041015625,0.15207909047603607177734375,-0.0162620078772306442260742...
+[SIMILARITY] Nb total documents scannés : 322
+[SIMILARITY] Résultats pertinents trouvés : 0
+[OPENAI] Prompt envoyé : Tu es un arbitre logique. Analyse la question de l'utilisateur : "Tu peux me raconter une blague ?". Si elle ne concerne pas IAM, réponds 'HORS-SUJET...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoLLnKoFI5i50Fk5shgwRTGiZDJcL",
+  "object": "chat.completion",
+  "created": 1751338171,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoLU2BAqFk9kLcwffved7DWIyZXja",
+  "object": "chat.completion",
+  "created": 1751338682,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Quels sont les débouchés après le diplôme ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.014210633933544158935546875,0.14413936436176300048828125,-0.01487426925450563430786...
+[SIMILARITY] Nb total documents scannés : 322
+[SIMILARITY] Match ID=10 Score=0.898
+[SIMILARITY] Match ID=21 Score=0.622
+[SIMILARITY] Match ID=43 Score=0.608
+[SIMILARITY] Match ID=45 Score=0.637
+[SIMILARITY] Match ID=74 Score=0.611
+[SIMILARITY] Match ID=92 Score=0.661
+[SIMILARITY] Match ID=146 Score=0.607
+[SIMILARITY] Match ID=153 Score=0.639
+[SIMILARITY] Match ID=196 Score=0.664
+[SIMILARITY] Match ID=238 Score=0.652
+[SIMILARITY] Match ID=267 Score=0.66
+[SIMILARITY] Match ID=317 Score=0.644
+[SIMILARITY] Match ID=323 Score=0.634
+[SIMILARITY] Résultats pertinents trouvés : 13
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Nos diplômés sont très recherch...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoLbpfNtA8g9NWA8QSYg9GziZmI0E",
+  "object": "chat.completion",
+  "created": 1751339165,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Quels sont les débouchés après le diplôme ?
+[EMBEDDING] Erreur HTTP 403 : 
+[OPENAI] Prompt envoyé : Tu es un arbitre logique. Analyse la question de l'utilisateur : "Quels sont les débouchés après le diplôme ?". Si elle ne concerne pas IAM, répo...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoLbqstTx4fDOViTMnqenm71YzjHM",
+  "object": "chat.completion",
+  "created": 1751339166,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoLc6yWQBV2InPho4iR3jZ3Vpl33i",
+  "object": "chat.completion",
+  "created": 1751339182,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Où se trouve le campus de l'IAM ?
+[EMBEDDING] Erreur HTTP 403 : 
+[OPENAI] Prompt envoyé : Tu es un arbitre logique. Analyse la question de l'utilisateur : "Où se trouve le campus de l'IAM ?". Si elle ne concerne pas IAM, réponds 'HORS-SUJ...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoLc7vpngO9LxFMiccD8naAaXFwex",
+  "object": "chat.completion",
+  "created": 1751339183,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[01-Jul-2025 05:21:38 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php:68
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php(68): fopen('', 'rb+')
+#1 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(1245): FontLib\BinaryStream->open(false, 'rb+')
+#2 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(994): Dompdf\Cpdf->processFont(8, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(3454): Dompdf\Cpdf->o_font(8, 'add')
+#4 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/src/Adapter/CPDF.php(972): Dompdf\Cpdf->output(false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/src/Dompdf.php(912): Dompdf\Adapter\CPDF->stream('rapport_iam_01-...', Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/report_generator.php(105): Dompdf\Dompdf->stream('rapport_iam_01-...', Array)
+#7 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php on line 68
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[01-Jul-2025 05:27:52 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php:68
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php(68): fopen('', 'rb+')
+#1 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(1245): FontLib\BinaryStream->open(false, 'rb+')
+#2 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(994): Dompdf\Cpdf->processFont(8, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(3454): Dompdf\Cpdf->o_font(8, 'add')
+#4 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/src/Adapter/CPDF.php(972): Dompdf\Cpdf->output(false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/src/Dompdf.php(912): Dompdf\Adapter\CPDF->stream('rapport_iam_01-...', Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/report_generator.php(105): Dompdf\Dompdf->stream('rapport_iam_01-...', Array)
+#7 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php on line 68
+[AUTH] Aucun token trouvé
+[AUTH] Utilisateur identifié : ID=2
+[01-Jul-2025 05:28:21 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php:68
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php(68): fopen('', 'rb+')
+#1 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(1245): FontLib\BinaryStream->open(false, 'rb+')
+#2 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(994): Dompdf\Cpdf->processFont(8, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(3454): Dompdf\Cpdf->o_font(8, 'add')
+#4 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/src/Adapter/CPDF.php(972): Dompdf\Cpdf->output(false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/src/Dompdf.php(912): Dompdf\Adapter\CPDF->stream('rapport_iam_01-...', Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/report_generator.php(105): Dompdf\Dompdf->stream('rapport_iam_01-...', Array)
+#7 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php on line 68
+[AUTH] Aucun token trouvé
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[01-Jul-2025 05:31:49 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php:68
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php(68): fopen('', 'rb+')
+#1 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(1245): FontLib\BinaryStream->open(false, 'rb+')
+#2 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(994): Dompdf\Cpdf->processFont(8, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(3454): Dompdf\Cpdf->o_font(8, 'add')
+#4 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/src/Adapter/CPDF.php(972): Dompdf\Cpdf->output(false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/src/Dompdf.php(912): Dompdf\Adapter\CPDF->stream('rapport_iam_01-...', Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/report_generator.php(105): Dompdf\Dompdf->stream('rapport_iam_01-...', Array)
+#7 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php on line 68
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[01-Jul-2025 05:38:43 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php:68
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php(68): fopen('', 'rb+')
+#1 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(1245): FontLib\BinaryStream->open(false, 'rb+')
+#2 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(994): Dompdf\Cpdf->processFont(8, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(3454): Dompdf\Cpdf->o_font(8, 'add')
+#4 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/src/Adapter/CPDF.php(972): Dompdf\Cpdf->output(false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/src/Dompdf.php(912): Dompdf\Adapter\CPDF->stream('rapport_iam_01-...', Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/report_generator.php(105): Dompdf\Dompdf->stream('rapport_iam_01-...', Array)
+#7 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php on line 68
+[AUTH] Utilisateur identifié : ID=2
+[01-Jul-2025 05:38:47 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php:68
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php(68): fopen('', 'rb+')
+#1 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(1245): FontLib\BinaryStream->open(false, 'rb+')
+#2 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(994): Dompdf\Cpdf->processFont(8, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(3454): Dompdf\Cpdf->o_font(8, 'add')
+#4 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/src/Adapter/CPDF.php(972): Dompdf\Cpdf->output(false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/src/Dompdf.php(912): Dompdf\Adapter\CPDF->stream('rapport_iam_01-...', Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/report_generator.php(105): Dompdf\Dompdf->stream('rapport_iam_01-...', Array)
+#7 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php on line 68
+[AUTH] Aucun token trouvé
+[AUTH] Aucun token trouvé
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[01-Jul-2025 05:42:34 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php:68
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php(68): fopen('', 'rb+')
+#1 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(1245): FontLib\BinaryStream->open(false, 'rb+')
+#2 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(994): Dompdf\Cpdf->processFont(8, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(3454): Dompdf\Cpdf->o_font(8, 'add')
+#4 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/src/Adapter/CPDF.php(972): Dompdf\Cpdf->output(false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/src/Dompdf.php(912): Dompdf\Adapter\CPDF->stream('rapport_iam_01-...', Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/report_generator.php(110): Dompdf\Dompdf->stream('rapport_iam_01-...', Array)
+#7 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php on line 68
+[AUTH] Utilisateur identifié : ID=2
+[01-Jul-2025 05:43:21 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php:68
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php(68): fopen('', 'rb+')
+#1 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(1245): FontLib\BinaryStream->open(false, 'rb+')
+#2 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(994): Dompdf\Cpdf->processFont(8, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(3454): Dompdf\Cpdf->o_font(8, 'add')
+#4 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/src/Adapter/CPDF.php(972): Dompdf\Cpdf->output(false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/src/Dompdf.php(912): Dompdf\Adapter\CPDF->stream('rapport_iam_01-...', Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/report_generator.php(110): Dompdf\Dompdf->stream('rapport_iam_01-...', Array)
+#7 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php on line 68
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[01-Jul-2025 05:46:04 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php:68
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php(68): fopen('', 'rb+')
+#1 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(1245): FontLib\BinaryStream->open(false, 'rb+')
+#2 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(994): Dompdf\Cpdf->processFont(8, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/lib/Cpdf.php(3454): Dompdf\Cpdf->o_font(8, 'add')
+#4 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/src/Adapter/CPDF.php(972): Dompdf\Cpdf->output(false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/dompdf/src/Dompdf.php(912): Dompdf\Adapter\CPDF->stream('rapport_iam_01-...', Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/report_generator.php(111): Dompdf\Dompdf->stream('rapport_iam_01-...', Array)
+#7 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/vendor/dompdf/php-font-lib/src/FontLib/BinaryStream.php on line 68
+[AUTH] Aucun token trouvé
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoMMvoGnzoIs9LZjNZUbuFmFtC4Gn",
+  "object": "chat.completion",
+  "created": 1751342085,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Quels sont les débouchés après le diplôme ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.014210633933544158935546875,0.14413936436176300048828125,-0.01487426925450563430786...
+[SIMILARITY] Nb total documents scannés : 322
+[SIMILARITY] Match ID=10 Score=0.898
+[SIMILARITY] Match ID=21 Score=0.622
+[SIMILARITY] Match ID=43 Score=0.608
+[SIMILARITY] Match ID=45 Score=0.637
+[SIMILARITY] Match ID=74 Score=0.611
+[SIMILARITY] Match ID=92 Score=0.661
+[SIMILARITY] Match ID=146 Score=0.607
+[SIMILARITY] Match ID=153 Score=0.639
+[SIMILARITY] Match ID=196 Score=0.664
+[SIMILARITY] Match ID=238 Score=0.652
+[SIMILARITY] Match ID=267 Score=0.66
+[SIMILARITY] Match ID=317 Score=0.644
+[SIMILARITY] Match ID=323 Score=0.634
+[SIMILARITY] Résultats pertinents trouvés : 13
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Nos diplômés sont très recherch...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[OPENAI] Prompt envoyé : Reformule cette phrase pour en faire une question complète destinée à un assistant d'université : "xxxx"...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoMN4vcwGEgkptxDpuPUiYTrFbcr2",
+  "object": "chat.completion",
+  "created": 1751342094,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[REFORMULATION] => Pouvez-vous m'aider à comprendre la signification de cette phrase ?
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoMN5og4a6dE4ZULsaCNXNMp6Sojh",
+  "object": "chat.completion",
+  "created": 1751342095,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Pouvez-vous m'aider à comprendre la signification de cette phrase ?
+[EMBEDDING] Réponse reçue : {"embedding":[0.0784723758697509765625,-0.1505067348480224609375,-0.0137011595070362091064453125,-0....
+[SIMILARITY] Nb total documents scannés : 322
+[SIMILARITY] Résultats pertinents trouvés : 0
+[OPENAI] Prompt envoyé : Tu es un arbitre logique. Analyse la question de l'utilisateur : "xxxx". Si elle ne concerne pas IAM, réponds 'HORS-SUJET'. Sinon, si elle est vague,...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoMN67ljsjTt0vTxABWXlk6RN7P68",
+  "object": "chat.completion",
+  "created": 1751342096,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[OPENAI] Prompt envoyé : Reformule cette phrase pour en faire une question complète destinée à un assistant d'université : "bb"...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoMNCPqd5sKz1I6Fa6KLQltUq7iYZ",
+  "object": "chat.completion",
+  "created": 1751342102,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[REFORMULATION] => Pouvez-vous m'indiquer la signification de "bb" dans le contexte universitaire ?
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoMNFw28iXZcGqhSo37K060L54aXG",
+  "object": "chat.completion",
+  "created": 1751342105,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Pouvez-vous m'indiquer la signification de "bb" dans le contexte universitaire ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.033676840364933013916015625,-0.113941691815853118896484375,-0.013311952352523803710...
+[SIMILARITY] Nb total documents scannés : 322
+[SIMILARITY] Match ID=305 Score=0.616
+[SIMILARITY] Match ID=307 Score=0.605
+[SIMILARITY] Résultats pertinents trouvés : 2
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- MBA signifie Master of Business Ad...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[01-Jul-2025 05:56:33 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function handle_delete_requests() in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/chat.php:24
+Stack trace:
+#0 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/chat.php on line 24
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[01-Jul-2025 05:56:35 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function handle_delete_requests() in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/chat.php:24
+Stack trace:
+#0 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/chat.php on line 24
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[01-Jul-2025 05:56:38 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function handle_delete_requests() in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/chat.php:24
+Stack trace:
+#0 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/chat.php on line 24
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[01-Jul-2025 05:56:44 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function handle_delete_requests() in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/chat.php:24
+Stack trace:
+#0 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/chat.php on line 24
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoN8mZKSTqMdrW7wkazMHNY0GiGyN",
+  "object": "chat.completion",
+  "created": 1751345052,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Que faire si je rate un examen pour raison médicale ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.1351164877414703369140625,-0.0435054041445255279541015625,-0.0163816381245851516723...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Match ID=121 Score=0.784
+[SIMILARITY] Match ID=193 Score=0.81
+[SIMILARITY] Match ID=352 Score=0.988
+[SIMILARITY] Résultats pertinents trouvés : 3
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Vous devez impérativement présen...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoN93t6bUhFbbnwEsUM6hBdkPqgGv",
+  "object": "chat.completion",
+  "created": 1751345069,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Comment consulter mon emploi du temps ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.110240019857883453369140625,0.0665821135044097900390625,-0.015797400847077369689941...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Match ID=325 Score=1
+[SIMILARITY] Résultats pertinents trouvés : 1
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Vous pouvez consulter votre emploi...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoN9B3C6FVZrHlyDJW6QA63O4zECw",
+  "object": "chat.completion",
+  "created": 1751345077,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Comment accéder à la plateforme Kairos ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.02710094861686229705810546875,-0.009854064323008060455322265625,-0.0103580765426158...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Match ID=340 Score=1
+[SIMILARITY] Match ID=342 Score=0.799
+[SIMILARITY] Match ID=343 Score=0.649
+[SIMILARITY] Résultats pertinents trouvés : 3
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Pour accéder à Kairos, rendez-vo...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoN9pydUgoPkq7odsfp5XrRDkrO2s",
+  "object": "chat.completion",
+  "created": 1751345117,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Comment obtenir mon certificat de scolarité ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.12467347085475921630859375,0.13682568073272705078125,-0.012797737494111061096191406...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Match ID=4 Score=0.677
+[SIMILARITY] Match ID=12 Score=0.914
+[SIMILARITY] Match ID=17 Score=0.61
+[SIMILARITY] Match ID=48 Score=0.612
+[SIMILARITY] Match ID=100 Score=0.605
+[SIMILARITY] Match ID=127 Score=0.764
+[SIMILARITY] Match ID=184 Score=0.646
+[SIMILARITY] Match ID=186 Score=0.669
+[SIMILARITY] Match ID=218 Score=0.601
+[SIMILARITY] Match ID=252 Score=0.603
+[SIMILARITY] Match ID=327 Score=0.627
+[SIMILARITY] Match ID=329 Score=1
+[SIMILARITY] Match ID=330 Score=0.71
+[SIMILARITY] Match ID=331 Score=0.653
+[SIMILARITY] Résultats pertinents trouvés : 14
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Vous pouvez générer une demande ...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[01-Jul-2025 06:48:58 Europe/Berlin] PHP Fatal error:  Cannot redeclare handle_post_requests() (previously declared in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/chat.php:83) in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/functions.php on line 49
+[TEST] Log initial
+[01-Jul-2025 06:49:02 Europe/Berlin] PHP Fatal error:  Cannot redeclare handle_post_requests() (previously declared in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/chat.php:83) in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/functions.php on line 49
+[TEST] Log initial
+[01-Jul-2025 06:49:04 Europe/Berlin] PHP Fatal error:  Cannot redeclare handle_post_requests() (previously declared in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/chat.php:83) in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/functions.php on line 49
+[TEST] Log initial
+[01-Jul-2025 06:49:39 Europe/Berlin] PHP Fatal error:  Cannot redeclare handle_post_requests() (previously declared in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/chat.php:83) in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/functions.php on line 196
+[TEST] Log initial
+[01-Jul-2025 06:49:41 Europe/Berlin] PHP Fatal error:  Cannot redeclare handle_post_requests() (previously declared in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/chat.php:83) in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/functions.php on line 196
+[TEST] Log initial
+[01-Jul-2025 06:49:43 Europe/Berlin] PHP Fatal error:  Cannot redeclare handle_post_requests() (previously declared in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/chat.php:83) in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/functions.php on line 196
+[TEST] Log initial
+[01-Jul-2025 06:51:38 Europe/Berlin] PHP Fatal error:  Cannot redeclare handle_get_requests() (previously declared in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/chat.php:33) in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/functions.php on line 195
+[TEST] Log initial
+[01-Jul-2025 06:51:40 Europe/Berlin] PHP Fatal error:  Cannot redeclare handle_get_requests() (previously declared in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/chat.php:33) in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/functions.php on line 195
+[TEST] Log initial
+[01-Jul-2025 06:51:42 Europe/Berlin] PHP Fatal error:  Cannot redeclare handle_get_requests() (previously declared in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/chat.php:33) in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/functions.php on line 195
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoNIdIqduwB2p7ZbOg1EQ3CuUJQ4M",
+  "object": "chat.completion",
+  "created": 1751345663,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Comment accéder à la plateforme Kairos ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.02710094861686229705810546875,-0.009854064323008060455322265625,-0.0103580765426158...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Match ID=340 Score=1
+[SIMILARITY] Match ID=342 Score=0.799
+[SIMILARITY] Match ID=343 Score=0.649
+[SIMILARITY] Résultats pertinents trouvés : 3
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Pour accéder à Kairos, rendez-vo...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoNItW4xcrNVilXhRXtIEG5JoKPIv",
+  "object": "chat.completion",
+  "created": 1751345679,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Que faire si je rate un examen pour raison médicale ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.1351164877414703369140625,-0.0435054041445255279541015625,-0.0163816381245851516723...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Match ID=121 Score=0.784
+[SIMILARITY] Match ID=193 Score=0.81
+[SIMILARITY] Match ID=352 Score=0.988
+[SIMILARITY] Résultats pertinents trouvés : 3
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Vous devez impérativement présen...
+[TEST] Log initial
+[01-Jul-2025 06:56:29 Europe/Berlin] PHP Fatal error:  Cannot redeclare handle_get_requests() (previously declared in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/chat.php:33) in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/functions.php on line 30
+[TEST] Log initial
+[01-Jul-2025 06:56:31 Europe/Berlin] PHP Fatal error:  Cannot redeclare handle_get_requests() (previously declared in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/chat.php:33) in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/functions.php on line 30
+[TEST] Log initial
+[01-Jul-2025 06:56:32 Europe/Berlin] PHP Fatal error:  Cannot redeclare handle_get_requests() (previously declared in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/chat.php:33) in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/functions.php on line 30
+[TEST] Log initial
+[01-Jul-2025 06:58:40 Europe/Berlin] PHP Fatal error:  Cannot redeclare handle_get_requests() (previously declared in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/chat.php:33) in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/functions.php on line 30
+[TEST] Log initial
+[01-Jul-2025 06:58:44 Europe/Berlin] PHP Fatal error:  Cannot redeclare handle_get_requests() (previously declared in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/chat.php:33) in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/functions.php on line 30
+[TEST] Log initial
+[01-Jul-2025 06:59:03 Europe/Berlin] PHP Fatal error:  Cannot redeclare handle_get_requests() (previously declared in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/chat.php:33) in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/functions.php on line 30
+[TEST] Log initial
+[01-Jul-2025 06:59:05 Europe/Berlin] PHP Fatal error:  Cannot redeclare handle_get_requests() (previously declared in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/chat.php:33) in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/functions.php on line 30
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoNNYBDs18CJfiprM2LQAqEt7MFG7",
+  "object": "chat.completion",
+  "created": 1751345968,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Comment accéder à la plateforme Kairos ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.02710094861686229705810546875,-0.009854064323008060455322265625,-0.0103580765426158...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Match ID=340 Score=1
+[SIMILARITY] Match ID=342 Score=0.799
+[SIMILARITY] Match ID=343 Score=0.649
+[SIMILARITY] Résultats pertinents trouvés : 3
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Pour accéder à Kairos, rendez-vo...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[OPENAI] Prompt envoyé : Reformule cette phrase pour en faire une question complète destinée à un assistant d'université : "ccc"...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoNNew2KscfMLN5PpNx5GhKdgVQda",
+  "object": "chat.completion",
+  "created": 1751345974,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[REFORMULATION] => Pouvez-vous m'expliquer ce que signifie "ccc" dans le contexte universitaire ?
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoNNe6oBcN3MjlEJYIewbeyGDgDHW",
+  "object": "chat.completion",
+  "created": 1751345974,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Pouvez-vous m'expliquer ce que signifie "ccc" dans le contexte universitaire ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.07869870960712432861328125,-0.083929397165775299072265625,-0.0095875803381204605102...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Résultats pertinents trouvés : 0
+[OPENAI] Prompt envoyé : Tu es un arbitre logique. Analyse la question de l'utilisateur : "ccc". Si elle ne concerne pas IAM, réponds 'HORS-SUJET'. Sinon, si elle est vague, ...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoNNgehv1XfdZJtIh0lepdgRiF13o",
+  "object": "chat.completion",
+  "created": 1751345976,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoNNtKl3YVYGvWUXK1aBzi5AjgWZU",
+  "object": "chat.completion",
+  "created": 1751345989,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : ya til des satelittes a iam
+[EMBEDDING] Réponse reçue : {"embedding":[0.0361091680824756622314453125,0.012662046588957309722900390625,-0.0154496328905224800...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Résultats pertinents trouvés : 0
+[OPENAI] Prompt envoyé : Tu es un arbitre logique. Analyse la question de l'utilisateur : "ya til des satelittes a iam". Si elle ne concerne pas IAM, réponds 'HORS-SUJET'. Si...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoNNuuoWuA9TgLG2wmQcySBDb5RR3",
+  "object": "chat.completion",
+  "created": 1751345990,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoNOBI5ka0pEwGwaZDfDJj6P8gEUZ",
+  "object": "chat.completion",
+  "created": 1751346007,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : vous avez une filiere comme medecine
+[EMBEDDING] Réponse reçue : {"embedding":[0.02402198128402233123779296875,0.0948747694492340087890625,-0.01839975826442241668701...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Résultats pertinents trouvés : 0
+[OPENAI] Prompt envoyé : Tu es un arbitre logique. Analyse la question de l'utilisateur : "vous avez une filiere comme medecine". Si elle ne concerne pas IAM, réponds 'HORS-S...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoNODpRW4PCdiRLS2TMfzOBGCKWt8",
+  "object": "chat.completion",
+  "created": 1751346009,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoNeiSuKMbeM4xnSwKPLxrTPWnpSZ",
+  "object": "chat.completion",
+  "created": 1751347032,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Comment accéder à la plateforme Kairos ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.02710094861686229705810546875,-0.009854064323008060455322265625,-0.0103580765426158...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Match ID=340 Score=1
+[SIMILARITY] Match ID=342 Score=0.799
+[SIMILARITY] Match ID=343 Score=0.649
+[SIMILARITY] Résultats pertinents trouvés : 3
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Pour accéder à Kairos, rendez-vo...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=3
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoNets40Lrv1PhGTQL6kWFEoJ5v9F",
+  "object": "chat.completion",
+  "created": 1751347043,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Comment consulter mon emploi du temps ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.110240019857883453369140625,0.0665821135044097900390625,-0.015797400847077369689941...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Match ID=325 Score=1
+[SIMILARITY] Résultats pertinents trouvés : 1
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Vous pouvez consulter votre emploi...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoNfN9mEklmz43NzeCBQniyIUWGeE",
+  "object": "chat.completion",
+  "created": 1751347073,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Quels sont les frais de scolarité ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.15731738507747650146484375,-0.063328273594379425048828125,-0.0121365850791335105895...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Match ID=2 Score=0.979
+[SIMILARITY] Match ID=3 Score=0.803
+[SIMILARITY] Match ID=23 Score=0.603
+[SIMILARITY] Match ID=24 Score=0.691
+[SIMILARITY] Match ID=26 Score=0.964
+[SIMILARITY] Match ID=44 Score=0.612
+[SIMILARITY] Match ID=47 Score=0.622
+[SIMILARITY] Match ID=93 Score=0.61
+[SIMILARITY] Match ID=199 Score=0.828
+[SIMILARITY] Match ID=336 Score=0.799
+[SIMILARITY] Match ID=338 Score=0.749
+[SIMILARITY] Résultats pertinents trouvés : 11
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Les frais de scolarité dépendent...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoNfRBGWNXK1S1sQnkambYs78rnN8",
+  "object": "chat.completion",
+  "created": 1751347077,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Quels sont les débouchés après le diplôme ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.014210633933544158935546875,0.14413936436176300048828125,-0.01487426925450563430786...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Match ID=10 Score=0.898
+[SIMILARITY] Match ID=21 Score=0.622
+[SIMILARITY] Match ID=43 Score=0.608
+[SIMILARITY] Match ID=45 Score=0.637
+[SIMILARITY] Match ID=74 Score=0.611
+[SIMILARITY] Match ID=92 Score=0.661
+[SIMILARITY] Match ID=146 Score=0.607
+[SIMILARITY] Match ID=153 Score=0.639
+[SIMILARITY] Match ID=196 Score=0.664
+[SIMILARITY] Match ID=238 Score=0.652
+[SIMILARITY] Match ID=267 Score=0.66
+[SIMILARITY] Match ID=317 Score=0.644
+[SIMILARITY] Match ID=323 Score=0.634
+[SIMILARITY] Résultats pertinents trouvés : 13
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Nos diplômés sont très recherch...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoNfmoSZj08OZervahdHOaU8O17Sn",
+  "object": "chat.completion",
+  "created": 1751347098,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Où se trouve le campus de l'IAM ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.15973700582981109619140625,-0.0408631749451160430908203125,-0.007257723249495029449...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Match ID=7 Score=0.692
+[SIMILARITY] Match ID=27 Score=0.763
+[SIMILARITY] Match ID=40 Score=0.74
+[SIMILARITY] Match ID=50 Score=0.661
+[SIMILARITY] Match ID=91 Score=0.628
+[SIMILARITY] Match ID=152 Score=0.648
+[SIMILARITY] Match ID=181 Score=0.629
+[SIMILARITY] Match ID=229 Score=0.611
+[SIMILARITY] Match ID=239 Score=0.653
+[SIMILARITY] Match ID=241 Score=0.615
+[SIMILARITY] Match ID=243 Score=0.751
+[SIMILARITY] Match ID=261 Score=0.677
+[SIMILARITY] Match ID=351 Score=0.67
+[SIMILARITY] Résultats pertinents trouvés : 13
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Nous ne disposons pas de cité uni...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoNfwPceRk6pkiujg1eFNw4bmY9fX",
+  "object": "chat.completion",
+  "created": 1751347108,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Les diplômes sont-ils reconnus par l'Etat ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.078291274607181549072265625,0.154126822948455810546875,-0.0114446971565485000610351...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Match ID=12 Score=0.664
+[SIMILARITY] Match ID=17 Score=1
+[SIMILARITY] Match ID=35 Score=0.68
+[SIMILARITY] Match ID=44 Score=0.634
+[SIMILARITY] Match ID=45 Score=0.615
+[SIMILARITY] Match ID=63 Score=0.634
+[SIMILARITY] Match ID=146 Score=0.601
+[SIMILARITY] Match ID=153 Score=0.722
+[SIMILARITY] Match ID=184 Score=0.618
+[SIMILARITY] Match ID=196 Score=0.685
+[SIMILARITY] Match ID=204 Score=0.696
+[SIMILARITY] Match ID=209 Score=0.82
+[SIMILARITY] Match ID=218 Score=0.635
+[SIMILARITY] Match ID=238 Score=0.604
+[SIMILARITY] Match ID=245 Score=0.842
+[SIMILARITY] Match ID=252 Score=0.631
+[SIMILARITY] Match ID=267 Score=0.689
+[SIMILARITY] Match ID=286 Score=0.64
+[SIMILARITY] Match ID=290 Score=0.607
+[SIMILARITY] Match ID=298 Score=0.638
+[SIMILARITY] Match ID=299 Score=0.784
+[SIMILARITY] Match ID=329 Score=0.61
+[SIMILARITY] Résultats pertinents trouvés : 22
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Oui, tous nos diplômes sont accr�...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoaMCzKngGhZFC37sYo7annmavHlO",
+  "object": "chat.completion",
+  "created": 1751395856,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : je sais pas qur
+[EMBEDDING] Réponse reçue : {"embedding":[0.0512708537280559539794921875,0.0611540377140045166015625,-0.017312435433268547058105...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Match ID=174 Score=0.69
+[SIMILARITY] Résultats pertinents trouvés : 1
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Notre institut se trouve à l'adre...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoaMUwoNaYfWv3z366WBXFzxj2NcT",
+  "object": "chat.completion",
+  "created": 1751395874,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => OUI
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[OPENAI] Prompt envoyé : Reformule cette phrase pour en faire une question complète destinée à un assistant d'université : "informatique"...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoaMlwRNoKXSBTXizrJts0smyTaQv",
+  "object": "chat.completion",
+  "created": 1751395891,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[REFORMULATION] => Pouvez-vous m'indiquer où se trouve le département d'informatique de l'université ?
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoaMmrDpSeDP5WzRuLBrzzfKZKF1t",
+  "object": "chat.completion",
+  "created": 1751395892,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => OUI
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[OPENAI] Prompt envoyé : Reformule cette phrase pour en faire une question complète destinée à un assistant d'université : "informatique"...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoaMxDz9NHqVOfQRQ2WB5vlEBHbY7",
+  "object": "chat.completion",
+  "created": 1751395903,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[REFORMULATION] => Pouvez-vous m'indiquer où se trouve le département d'informatique de l'université ?
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoaLtnSmVYPVvKB8c5jgAdDZezGMa",
+  "object": "chat.completion",
+  "created": 1751395837,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => OUI
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[OPENAI] Prompt envoyé : Reformule cette phrase pour en faire une question complète destinée à un assistant d'université : "maths"...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoaNDen1VQsYDDjdrSkheRis3buB7",
+  "object": "chat.completion",
+  "created": 1751395919,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[REFORMULATION] => Pouvez-vous m'indiquer où se trouvent les cours de maths ?
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoaNEiofqAURZnjGSg6Q0N9IE6eLO",
+  "object": "chat.completion",
+  "created": 1751395920,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoaNdBbpkNoTrohuQbuL4CZxd6gAZ",
+  "object": "chat.completion",
+  "created": 1751395945,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => OUI
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[OPENAI] Prompt envoyé : Reformule cette phrase pour en faire une question complète destinée à un assistant d'université : "maths"...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoaNggU84v6yQggn0BAFP76UzMABw",
+  "object": "chat.completion",
+  "created": 1751395948,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[REFORMULATION] => Pouvez-vous m'indiquer où se trouve le département de mathématiques de l'université ?
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoaNhw9eJPRgVSx5Ds5u1oNUbj6lv",
+  "object": "chat.completion",
+  "created": 1751395949,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[OPENAI] Prompt envoyé : Reformule cette phrase pour en faire une question complète destinée à un assistant d'université : "Comment puis-je m'inscrire ?"...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-Bof8S1CvwPsg2ju16pumWZ6cwBRJs",
+  "object": "chat.completion",
+  "created": 1751414224,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[REFORMULATION] => Pouvez-vous me dire comment je peux m'inscrire ?
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-Bof8T7KxICBXISLPcGkZnN4BmlcyQ",
+  "object": "chat.completion",
+  "created": 1751414225,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Pouvez-vous me dire comment je peux m'inscrire ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.18644832074642181396484375,0.111775331199169158935546875,-0.01006163377314805984497...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Match ID=4 Score=0.677
+[SIMILARITY] Match ID=8 Score=0.725
+[SIMILARITY] Match ID=116 Score=0.603
+[SIMILARITY] Match ID=327 Score=0.629
+[SIMILARITY] Match ID=345 Score=0.711
+[SIMILARITY] Résultats pertinents trouvés : 5
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Pour toute question relative aux a...
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Aucun token trouvé
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BofMv69hwS0Xz1aNmprRMLEwLVey0",
+  "object": "chat.completion",
+  "created": 1751415121,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => OUI
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BofN17LQbPy4bu0x05qtVjDEux8aJ",
+  "object": "chat.completion",
+  "created": 1751415127,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Où se trouve le campus de l'IAM ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.15973700582981109619140625,-0.0408631749451160430908203125,-0.007257723249495029449...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Match ID=7 Score=0.692
+[SIMILARITY] Match ID=27 Score=0.763
+[SIMILARITY] Match ID=40 Score=0.74
+[SIMILARITY] Match ID=50 Score=0.661
+[SIMILARITY] Match ID=91 Score=0.628
+[SIMILARITY] Match ID=152 Score=0.648
+[SIMILARITY] Match ID=181 Score=0.629
+[SIMILARITY] Match ID=229 Score=0.611
+[SIMILARITY] Match ID=239 Score=0.653
+[SIMILARITY] Match ID=241 Score=0.615
+[SIMILARITY] Match ID=243 Score=0.751
+[SIMILARITY] Match ID=261 Score=0.677
+[SIMILARITY] Match ID=351 Score=0.67
+[SIMILARITY] Résultats pertinents trouvés : 13
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Nous ne disposons pas de cité uni...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BofNFPknLf5XzxtIxIKDcxTdNNbQk",
+  "object": "chat.completion",
+  "created": 1751415141,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : ou se situe iam
+[EMBEDDING] Réponse reçue : {"embedding":[0.0280331186950206756591796875,0.094996504485607147216796875,-0.0200477745383977890014...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Match ID=174 Score=0.848
+[SIMILARITY] Résultats pertinents trouvés : 1
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Notre institut se trouve à l'adre...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BofNXPGXKgnsvXsOkDudr9JxjHsu7",
+  "object": "chat.completion",
+  "created": 1751415159,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : ce quoi le numero de telephone de iam
+[EMBEDDING] Réponse reçue : {"embedding":[-0.04261337220668792724609375,-0.0037579252384603023529052734375,-0.017953881993889808...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Résultats pertinents trouvés : 0
+[OPENAI] Prompt envoyé : Tu es un arbitre logique. Analyse la question de l'utilisateur : "ce quoi le numero de telephone de iam". Si elle ne concerne pas IAM, réponds 'HORS-...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BofNZxiyLz9HhFCz4SdGFmFwyWRIj",
+  "object": "chat.completion",
+  "created": 1751415161,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BofW3dblr4IGUb4lxVBGacZSd9ueS",
+  "object": "chat.completion",
+  "created": 1751415687,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Quels sont les frais de scolarité ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.15731738507747650146484375,-0.063328273594379425048828125,-0.0121365850791335105895...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Match ID=2 Score=0.979
+[SIMILARITY] Match ID=3 Score=0.803
+[SIMILARITY] Match ID=23 Score=0.603
+[SIMILARITY] Match ID=24 Score=0.691
+[SIMILARITY] Match ID=26 Score=0.964
+[SIMILARITY] Match ID=44 Score=0.612
+[SIMILARITY] Match ID=47 Score=0.622
+[SIMILARITY] Match ID=93 Score=0.61
+[SIMILARITY] Match ID=199 Score=0.828
+[SIMILARITY] Match ID=336 Score=0.799
+[SIMILARITY] Match ID=338 Score=0.749
+[SIMILARITY] Résultats pertinents trouvés : 11
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Les frais de scolarité dépendent...
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-Bofa9x5TgXVfIqquWesDT7WVZTtc5",
+  "object": "chat.completion",
+  "created": 1751415941,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Quels sont les frais de scolarité ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.15731738507747650146484375,-0.063328273594379425048828125,-0.0121365850791335105895...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Match ID=2 Score=0.979
+[SIMILARITY] Match ID=3 Score=0.803
+[SIMILARITY] Match ID=23 Score=0.603
+[SIMILARITY] Match ID=24 Score=0.691
+[SIMILARITY] Match ID=26 Score=0.964
+[SIMILARITY] Match ID=44 Score=0.612
+[SIMILARITY] Match ID=47 Score=0.622
+[SIMILARITY] Match ID=93 Score=0.61
+[SIMILARITY] Match ID=199 Score=0.828
+[SIMILARITY] Match ID=336 Score=0.799
+[SIMILARITY] Match ID=338 Score=0.749
+[SIMILARITY] Résultats pertinents trouvés : 11
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Les frais de scolarité dépendent...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BofaGXLRMhdunJXp7iSOZoWxFEhHj",
+  "object": "chat.completion",
+  "created": 1751415948,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Proposez-vous des bourses d'études ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.0641168653964996337890625,0.2331876456737518310546875,-0.01785871945321559906005859...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Match ID=3 Score=0.715
+[SIMILARITY] Match ID=24 Score=0.783
+[SIMILARITY] Match ID=26 Score=0.612
+[SIMILARITY] Match ID=31 Score=0.832
+[SIMILARITY] Match ID=75 Score=0.633
+[SIMILARITY] Match ID=93 Score=0.606
+[SIMILARITY] Match ID=145 Score=0.674
+[SIMILARITY] Match ID=161 Score=0.699
+[SIMILARITY] Match ID=181 Score=0.631
+[SIMILARITY] Match ID=185 Score=0.674
+[SIMILARITY] Match ID=212 Score=0.72
+[SIMILARITY] Match ID=239 Score=0.601
+[SIMILARITY] Match ID=257 Score=0.633
+[SIMILARITY] Match ID=336 Score=0.626
+[SIMILARITY] Match ID=346 Score=0.704
+[SIMILARITY] Résultats pertinents trouvés : 15
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Oui, l'IAM a plus de 50 universit�...
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BofjOcHd1rJnNPB9xQOABb9f9WqB9",
+  "object": "chat.completion",
+  "created": 1751416514,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Quels sont les frais de scolarité ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.15731738507747650146484375,-0.063328273594379425048828125,-0.0121365850791335105895...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Match ID=2 Score=0.979
+[SIMILARITY] Match ID=3 Score=0.803
+[SIMILARITY] Match ID=23 Score=0.603
+[SIMILARITY] Match ID=24 Score=0.691
+[SIMILARITY] Match ID=26 Score=0.964
+[SIMILARITY] Match ID=44 Score=0.612
+[SIMILARITY] Match ID=47 Score=0.622
+[SIMILARITY] Match ID=93 Score=0.61
+[SIMILARITY] Match ID=199 Score=0.828
+[SIMILARITY] Match ID=336 Score=0.799
+[SIMILARITY] Match ID=338 Score=0.749
+[SIMILARITY] Résultats pertinents trouvés : 11
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Les frais de scolarité dépendent...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-Bofl5JeXLtxxQcCH367KXHGNIAgMD",
+  "object": "chat.completion",
+  "created": 1751416619,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => OUI
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BoflAMBNdwbG4U1sGMWwbJpDMAhOl",
+  "object": "chat.completion",
+  "created": 1751416624,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => OUI
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-Bofn0AFqHRMpqTjsbeTXQD8aRlNtb",
+  "object": "chat.completion",
+  "created": 1751416738,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Quels sont les frais de scolarité ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.15731738507747650146484375,-0.063328273594379425048828125,-0.0121365850791335105895...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Match ID=2 Score=0.979
+[SIMILARITY] Match ID=3 Score=0.803
+[SIMILARITY] Match ID=23 Score=0.603
+[SIMILARITY] Match ID=24 Score=0.691
+[SIMILARITY] Match ID=26 Score=0.964
+[SIMILARITY] Match ID=44 Score=0.612
+[SIMILARITY] Match ID=47 Score=0.622
+[SIMILARITY] Match ID=93 Score=0.61
+[SIMILARITY] Match ID=199 Score=0.828
+[SIMILARITY] Match ID=336 Score=0.799
+[SIMILARITY] Match ID=338 Score=0.749
+[SIMILARITY] Résultats pertinents trouvés : 11
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Les frais de scolarité dépendent...
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BofrdpxI4V1lhxl9KzkK1DOOHqTGw",
+  "object": "chat.completion",
+  "created": 1751417025,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Quels sont les frais de scolarité ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.15731738507747650146484375,-0.063328273594379425048828125,-0.0121365850791335105895...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Match ID=2 Score=0.979
+[SIMILARITY] Match ID=3 Score=0.803
+[SIMILARITY] Match ID=23 Score=0.603
+[SIMILARITY] Match ID=24 Score=0.691
+[SIMILARITY] Match ID=26 Score=0.964
+[SIMILARITY] Match ID=44 Score=0.612
+[SIMILARITY] Match ID=47 Score=0.622
+[SIMILARITY] Match ID=93 Score=0.61
+[SIMILARITY] Match ID=199 Score=0.828
+[SIMILARITY] Match ID=336 Score=0.799
+[SIMILARITY] Match ID=338 Score=0.749
+[SIMILARITY] Résultats pertinents trouvés : 11
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Les frais de scolarité dépendent...
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-BofvTwDEGFbUFye2cKNGJyx88aR6M",
+  "object": "chat.completion",
+  "created": 1751417263,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Quels sont les frais de scolarité ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.15731738507747650146484375,-0.063328273594379425048828125,-0.0121365850791335105895...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Match ID=2 Score=0.979
+[SIMILARITY] Match ID=3 Score=0.803
+[SIMILARITY] Match ID=23 Score=0.603
+[SIMILARITY] Match ID=24 Score=0.691
+[SIMILARITY] Match ID=26 Score=0.964
+[SIMILARITY] Match ID=44 Score=0.612
+[SIMILARITY] Match ID=47 Score=0.622
+[SIMILARITY] Match ID=93 Score=0.61
+[SIMILARITY] Match ID=199 Score=0.828
+[SIMILARITY] Match ID=336 Score=0.799
+[SIMILARITY] Match ID=338 Score=0.749
+[SIMILARITY] Résultats pertinents trouvés : 11
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Les frais de scolarité dépendent...
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[02-Jul-2025 03:24:45 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'status' in 'field list' in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php:77
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php(77): mysqli->prepare('UPDATE appointm...')
+#1 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php on line 77
+[AUTH] Utilisateur identifié : ID=2
+[02-Jul-2025 03:24:54 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'status' in 'field list' in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php:77
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php(77): mysqli->prepare('UPDATE appointm...')
+#1 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php on line 77
+[AUTH] Utilisateur identifié : ID=2
+[02-Jul-2025 03:25:04 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'status' in 'field list' in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php:77
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php(77): mysqli->prepare('UPDATE appointm...')
+#1 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php on line 77
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[02-Jul-2025 03:28:38 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'status' in 'field list' in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php:86
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php(86): mysqli->prepare('UPDATE appointm...')
+#1 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php on line 86
+[AUTH] Utilisateur identifié : ID=2
+[02-Jul-2025 03:29:02 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'status' in 'field list' in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php:86
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php(86): mysqli->prepare('UPDATE appointm...')
+#1 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php on line 86
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Aucun token trouvé
+[02-Jul-2025 03:39:18 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'prospect_name' in 'field list' in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php:36
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php(36): mysqli->prepare('INSERT INTO app...')
+#1 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php on line 36
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Aucun token trouvé
+[02-Jul-2025 03:40:01 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'prospect_name' in 'field list' in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php:49
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php(49): mysqli->prepare('INSERT INTO app...')
+#1 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php on line 49
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Aucun token trouvé
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[02-Jul-2025 03:44:59 Europe/Berlin] PHP Warning:  Undefined variable $action in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php on line 80
+[02-Jul-2025 03:44:59 Europe/Berlin] PHP Warning:  Undefined variable $action in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php on line 86
+[02-Jul-2025 03:44:59 Europe/Berlin] PHP Warning:  Undefined variable $action in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php on line 100
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[02-Jul-2025 03:45:10 Europe/Berlin] PHP Warning:  Undefined variable $action in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php on line 80
+[02-Jul-2025 03:45:10 Europe/Berlin] PHP Warning:  Undefined variable $action in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php on line 86
+[02-Jul-2025 03:45:10 Europe/Berlin] PHP Warning:  Undefined variable $action in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php on line 100
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[02-Jul-2025 03:45:13 Europe/Berlin] PHP Warning:  Undefined variable $action in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php on line 80
+[02-Jul-2025 03:45:13 Europe/Berlin] PHP Warning:  Undefined variable $action in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php on line 86
+[02-Jul-2025 03:45:13 Europe/Berlin] PHP Warning:  Undefined variable $action in /Applications/XAMPP/xamppfiles/htdocs/chatbtot2BD/api/appointments_manager.php on line 100
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[OPENAI] Prompt envoyé : Analyse la question suivante. Si l'utilisateur cherche une orientation ou demande de l'aide pour choisir une filière universitaire, réponds seulemen...
+[OPENAI] Réponse brute : {
+  "id": "chatcmpl-Boguk3wvRRAeHzwg3in1A34GgHUfe",
+  "object": "chat.completion",
+  "created": 1751421062,
+  "model": "gpt-3.5-turbo-0125",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+ ...
+[INTENTION] Orientation ? => NON
+[EMBEDDING] Texte à vectoriser : Quels sont les frais de scolarité ?
+[EMBEDDING] Réponse reçue : {"embedding":[-0.15731738507747650146484375,-0.063328273594379425048828125,-0.0121365850791335105895...
+[SIMILARITY] Nb total documents scannés : 351
+[SIMILARITY] Match ID=2 Score=0.979
+[SIMILARITY] Match ID=3 Score=0.803
+[SIMILARITY] Match ID=23 Score=0.603
+[SIMILARITY] Match ID=24 Score=0.691
+[SIMILARITY] Match ID=26 Score=0.964
+[SIMILARITY] Match ID=44 Score=0.612
+[SIMILARITY] Match ID=47 Score=0.622
+[SIMILARITY] Match ID=93 Score=0.61
+[SIMILARITY] Match ID=199 Score=0.828
+[SIMILARITY] Match ID=336 Score=0.799
+[SIMILARITY] Match ID=338 Score=0.749
+[SIMILARITY] Résultats pertinents trouvés : 11
+[OPENAI] Prompt envoyé : Tu es un assistant IAM. Réponds en français, de manière claire. Voici le contexte :
+Informations pertinentes :
+- Les frais de scolarité dépendent...
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=2
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Aucun token trouvé
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Aucun token trouvé
+[AUTH] Utilisateur identifié : ID=1
+[TEST] Log initial
+[AUTH] Utilisateur identifié : ID=1
+[AUTH] Utilisateur identifié : ID=1

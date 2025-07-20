@@ -1,0 +1,2703 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot IAM - Assistant Intelligent</title>
+    <!-- Tailwind CSS CDN pour un stylisme moderne et réactif -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+
+    <!-- Font Awesome pour les icônes -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Reset et styles de base */
+:root {
+    --primary-gradient: linear-gradient(135deg, #000000 0%, #333333 100%);
+    --secondary-gradient: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    --success-gradient: linear-gradient(135deg, #333333 0%, #666666 100%);
+    --warning-gradient: linear-gradient(135deg, #666666 0%, #999999 100%);
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-bg-dark: rgba(0, 0, 0, 0.1);
+    --glass-border-dark: rgba(0, 0, 0, 0.2);
+    --shadow-glow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --animation-speed: 0.3s;
+}
+
+/* Animation des particules flottantes */
+.floating-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+    overflow: hidden;
+}
+
+.floating-particles::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(0, 0, 0, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 0, 0, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(0, 0, 0, 0.02) 0%, transparent 50%);
+    animation: particleFloat 20s ease-in-out infinite;
+}
+
+@keyframes particleFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+/* Header avec effet glassmorphism */
+.header {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-glow);
+     color: black; 
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo i {
+    -webkit-text-fill-color: #000000;
+    background: none;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+}
+
+.user-type-selector {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    color: #000000c8;
+    outline: none;
+    transition: all var(--animation-speed);
+}
+
+.user-type-selector:focus {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-color: #333333;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.greeting {
+    color: #050f1c; /* gris bleuté clair */
+    font-size: 0.75rem; /* plus petit */
+    font-weight: 400;
+    margin-right: 0.5rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    background-color: transparent; /* pas de fond pour encore plus de légèreté */
+}
+
+
+
+/* Boutons avec effets modernes */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all var(--animation-speed);
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-primary {
+    background: var(--primary-gradient);
+    color: white;
+    box-shadow: var(--shadow-soft);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    color: #000000;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary:hover {
+    background: rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+}
+
+/* Container principal */
+.main-container {
+    display: flex;
+    height: calc(100vh - 80px);
+    position: relative;
+}
+
+/* Sidebar avec animations */
+.sidebar {
+    width: 300px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    overflow-y: auto;
+    transition: transform var(--animation-speed);
+}
+
+.sidebar h3 {
+    color: #000000;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li {
+    background: rgba(0, 0, 0, 0.02);
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all var(--animation-speed);
+    cursor: pointer;
+    color: #000000;
+}
+
+.feature-list li:hover {
+    background: rgba(0, 0, 0, 0.05);
+    transform: translateX(5px);
+    box-shadow: var(--shadow-soft);
+}
+
+.feature-list li i {
+    color: #333333;
+    margin-right: 0.5rem;
+}
+
+/* Chat container avec design moderne */
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: rgba(248, 249, 250, 0.5);
+}
+
+.chat-header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h2 {
+    color: #000000;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.chat-header small {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.chat-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #000000;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    background: #333333;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(51, 51, 51, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(51, 51, 51, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(51, 51, 51, 0); }
+}
+
+/* Messages avec bulles modernes */
+.chat-messages {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.message {
+    display: flex;
+    gap: 1rem;
+    animation: messageSlideIn 0.5s ease-out;
+}
+
+@keyframes messageSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.bot-avatar {
+    background: var(--primary-gradient);
+    color: white;
+}
+
+.user-avatar {
+    background: var(--secondary-gradient);
+    color: #000000;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.message-content {
+    max-width: 70%;
+    padding: 1rem 1.5rem;
+    border-radius: 20px;
+    position: relative;
+}
+
+.bot-message {
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: white;
+    border-bottom-left-radius: 5px;
+}
+
+.user-message {
+    background: rgba(255, 255, 255, 0.95);
+    color: #000000;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-left: auto;
+    border-bottom-right-radius: 5px;
+}
+
+/* Actions rapides */
+.quick-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.quick-action {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    color: #000000;
+    cursor: pointer;
+    transition: all var(--animation-speed);
+    font-size: 0.9rem;
+}
+
+.quick-action:hover {
+    background: var(--primary-gradient);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Indicateur de frappe */
+.typing-indicator {
+    display: none;
+    padding: 0 2rem;
+    color: rgba(0, 0, 0, 0.6);
+    font-style: italic;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.typing-dots {
+    display: inline-flex;
+    gap: 0.2rem;
+}
+
+.typing-dots span {
+    width: 6px;
+    height: 6px;
+    background: #333333;
+    border-radius: 50%;
+    animation: typingBounce 1.4s infinite ease-in-out;
+}
+
+.typing-dots span:nth-child(1) { animation-delay: -0.32s; }
+.typing-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes typingBounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1); }
+}
+
+/* Zone de saisie moderne */
+.chat-input-container {
+    padding: 1.5rem 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.chat-input-wrapper {
+    display: flex;
+    align-items: end;
+    gap: 1rem;
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    padding: 0.5rem;
+    transition: all var(--animation-speed);
+}
+
+.chat-input-wrapper:focus-within {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-color: #333333;
+}
+
+.chat-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #000000;
+    padding: 0.75rem 1rem;
+    resize: none;
+    max-height: 120px;
+    font-size: 1rem;
+}
+
+.chat-input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.send-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--primary-gradient);
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--animation-speed);
+    flex-shrink: 0;
+}
+
+.send-btn:hover {
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Modals avec glassmorphism */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-glow);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal-header h3 {
+    color: #000000;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    color: #000000;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all var(--animation-speed);
+}
+
+.close-modal:hover {
+    background: rgba(0, 0, 0, 0.05);
+    transform: rotate(90deg);
+}
+
+/* Formulaires stylisés */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: #000000;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+/* Style pour le formulaire de rendez-vous dans le chat */
+#appointment-form {
+  font-size: 0.95rem;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+#appointment-form label {
+  color: #374151;
+  font-weight: 600;
+}
+
+#appointment-form input,
+#appointment-form textarea {
+  background-color: #fff;
+  border: 1px solid #d1d5db;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  width: 100%;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+
+#appointment-form input:focus,
+#appointment-form textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+#appointment-form button {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#appointment-form button:hover {
+  background-color: #1d4ed8;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    color: #000000;
+    outline: none;
+    transition: all var(--animation-speed);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-color: #333333;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+/* Tables avec design moderne */
+.admin-panel-content table {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.admin-panel-content th {
+    background: rgba(0, 0, 0, 0.05);
+    color: #000000;
+    font-weight: 600;
+}
+
+.admin-panel-content td {
+    color: #000000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.admin-panel-content tr:hover {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+/* Sidebar d'historique */
+.history-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100vh;
+    background: rgba(7, 5, 5, 0.95);
+    backdrop-filter: blur(20px);
+    border-left: 1px solid rgba(199, 196, 196, 0.1);
+    transition: right var(--animation-speed);
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+}
+
+.history-sidebar.open {
+    right: 0;
+}
+
+.history-sidebar-header {
+    padding: 2rem;
+    border-bottom: 1px solid rgba(113, 109, 109, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.history-sidebar-header h3 {
+    color: #000000;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.history-sidebar-content {
+    flex: 1;
+    padding: 1rem 2rem;
+    overflow-y: auto;
+}
+
+/* Statistiques colorées */
+.admin-panel-content .bg-blue-50 { background: rgba(0, 0, 0, 0.05) !important; }
+.admin-panel-content .bg-green-50 { background: rgba(0, 0, 0, 0.08) !important; }
+.admin-panel-content .bg-yellow-50 { background: rgba(0, 0, 0, 0.03) !important; }
+.admin-panel-content .bg-purple-50 { background: rgba(0, 0, 0, 0.06) !important; }
+
+/* Classes utiles */
+.bg-gray-50 {
+    background-color: #f9fafb;
+    animation: slideIn 0.3s ease-out;
+}
+
+.text-gray-700 {
+    color: #374151;
+}
+
+.border-gray-200 {
+    border-color: #e5e7eb;
+}
+
+.bg-gray-600 {
+    background-color: #4b5563;
+}
+
+.bg-gray-600:hover {
+    background-color: #374151;
+}
+
+/* Notifications */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    color: white;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    animation: slideInUp 0.5s, fadeOut 0.5s 4.5s;
+}
+
+.notification-success { background: linear-gradient(135deg, #333333, #000000); }
+.notification-error { background: linear-gradient(135deg, #666666, #333333); }
+.notification-info { background: linear-gradient(135deg, #999999, #666666); }
+.notification-warning { background: linear-gradient(135deg, #cccccc, #999999); color: #000000; }
+
+.notification-close-btn {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+.notification-close-btn:hover { opacity: 1; }
+
+@keyframes slideInUp { from { transform: translateY(100px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+
+/* Animation pour les formulaires */
+.bg-blue-50,
+.bg-gray-50 {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .user-menu {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .main-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        order: 2;
+    }
+
+    .chat-container {
+        order: 1;
+        height: 60vh;
+    }
+
+    .message-content {
+        max-width: 85%;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    .history-sidebar {
+        width: 100%;
+        right: -100%;
+    }
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-gradient);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Animations de chargement */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: #333333;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* États d'interaction */
+.interactive:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body class="bg-gray-100 antialiased">
+    <!-- Particules flottantes -->
+    <div class="floating-particles" id="particles"></div>
+
+    <!-- En-tête principal -->
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            Chatbot IAM
+        </div>
+        <div class="user-menu">
+            <!-- Sélecteur de type d'utilisateur -->
+            <select class="user-type-selector" id="userType">
+                <option value="prospect">👤 Prospect</option>
+                <option value="student">🎓 Étudiant</option>
+                <option value="admin">⚙️ Administrateur</option>
+            </select>
+            <!-- Boutons d'authentification -->
+            <div class="auth-buttons">
+                <button class="btn btn-secondary" onclick="openModal('loginModal')">
+                    <i class="fas fa-sign-in-alt"></i> Connexion
+                </button>
+                <button class="btn btn-primary" onclick="openModal('registerModal')">
+                    <i class="fas fa-user-plus"></i> Inscription
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteneur principal de l'application -->
+    <div class="main-container">
+        <!-- Barre latérale de navigation -->
+      <aside class="sidebar">
+        
+    <h3>
+        <i class="fas fa-question-circle"></i>
+        <span>Suggestions</span>
+    </h3>
+    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
+        Cliquez sur une question pour la poser directement.
+    </p>
+    
+    <ul class="feature-list" id="featureList">
+        </ul>
+         <div id="my-appointments-section" class="hidden mt-6 pt-4 border-t border-gray-500">
+        <h4 class="font-semibold mb-3"><i class="fas fa-calendar-check mr-2"></i>Mes Demandes de RDV</h4>
+        <div id="my-appointments-list" class="space-y-3">
+            <!-- Le statut des rendez-vous sera chargé ici par JavaScript -->
+            <p class="text-xs text-gray-400">Aucune demande de rendez-vous trouvée.</p>
+        </div>
+    </div>
+</aside>
+
+        <!-- Conteneur de chat principal -->
+        <main class="chat-container">
+            <!-- En-tête du chat -->
+            <div class="chat-header">
+    
+    <div>
+        <h2 class="text-xl font-bold">Conversation</h2>
+        <div class="chat-status text-xs text-white/60 flex items-center gap-2">
+            <div class="status-dot"></div>
+            <span>En ligne</span>
+        </div>
+    </div>
+
+    <div class="flex items-center gap-4">
+        <button id="tts-toggle-btn" class="text-white/50 hover:text-white transition-colors" title="Activer/Désactiver la lecture des réponses">
+            <i class="fas fa-volume-mute fa-lg"></i>
+        </button>
+        <button class="btn btn-secondary !p-3 !rounded-full" onclick="toggleHistorySidebar()" title="Afficher l'historique">
+            <i class="fas fa-history"></i>
+        </button>
+    </div>
+
+</div>
+
+            <!-- Zone des messages de chat -->
+            <div class="chat-messages overflow-y-auto max-h-[500px] p-4 space-y-3 bg-white rounded shadow-inner" id="chatMessages">
+
+                <!-- Message initial du bot -->
+                <div class="message">
+                    <div class="message-avatar bot-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content bot-message">
+                        <p>Bonjour ! Je suis votre assistant IAM. Comment puis-je vous aider aujourd'hui ?</p>
+                        <div class="quick-actions" id="quickActions">
+                            <!-- Actions rapides dynamiques générées par JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Indicateur de saisie du bot -->
+            <div class="typing-indicator" id="typingIndicator">
+                L'assistant tape
+                <span class="typing-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </div>
+
+            <!-- Zone de saisie du message -->
+            <div class="chat-input-container">
+                <div class="chat-input-wrapper">
+                    <textarea
+                        class="chat-input"
+                        id="messageInput"
+                        placeholder="Tapez votre message..."
+                        rows="1"></textarea>
+                    
+
+                    <button class="send-btn" onclick="sendMessage()">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals de connexion et d'inscription -->
+
+    <!-- Modal de connexion -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Connexion</h3>
+                <button class="close-modal" onclick="closeModal('loginModal')">&times;</button>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Mot de passe</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-full">
+                    <i class="fas fa-sign-in-alt"></i> Se connecter
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal d'inscription -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Inscription</h3>
+                <button class="close-modal" onclick="closeModal('registerModal')">&times;</button>
+            </div>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Nom complet</label>
+                    <input type="text" id="registerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPhone">Téléphone</label>
+                    <input type="tel" id="registerPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerType">Type d'utilisateur</label>
+                    <select id="registerType" required>
+                        <option value="">Sélectionner...</option>
+                        <option value="prospect">Prospect</option>
+                        <option value="student">Étudiant</option>
+                        <!-- Les administrateurs ne peuvent pas s'inscrire via ce formulaire -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Mot de passe</label>
+                    <input type="password" id="registerPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-full">
+                    <i class="fas fa-user-plus"></i> S'inscrire
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modals et Sections pour les Fonctionnalités Admin -->
+<div id="admin-panel-container" class="hidden bg-gray-100 p-4 md:p-8">
+    <div class="max-w-7xl mx-auto space-y-12">
+        <div>
+    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Statistiques Clés</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="bg-blue-500 text-white p-6 rounded-lg shadow-lg">
+            <h4 class="text-lg font-semibold mb-2">Total Utilisateurs</h4>
+            <p id="totalUsersCount" class="text-4xl font-bold">0</p>
+        </div>
+
+        <div class="bg-green-500 text-white p-6 rounded-lg shadow-lg">
+            <h4 class="text-lg font-semibold mb-2">Messages Échangés</h4>
+            <p id="totalMessagesCount" class="text-4xl font-bold">0</p>
+        </div>
+
+        <div class="bg-yellow-500 text-white p-6 rounded-lg shadow-lg">
+            <h4 class="text-lg font-semibold mb-2">Tickets en Attente</h4>
+            <p id="pendingReclamationsCount" class="text-4xl font-bold">0</p>
+        </div>
+
+        <div class="bg-purple-500 text-white p-6 rounded-lg shadow-lg">
+            <h4 class="text-lg font-semibold mb-2">Administrateurs</h4>
+            <p id="adminUsersCount" class="text-4xl font-bold">0</p>
+        </div>
+
+    </div>
+    <div class="mt-12 bg-white rounded-lg shadow-xl p-6">
+  <h3 class="text-xl font-semibold text-gray-800 mb-4">Visualisation Graphique</h3>
+  <canvas id="statsChart" height="150"></canvas>
+</div>
+
+</div>
+<div class="flex justify-between items-center mb-6">
+    <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Statistiques Clés</h2>
+    <button id="download-report-btn" class="bg-teal-600 hover:bg-teal-800 text-white font-bold py-2 px-4 rounded shadow-lg">
+        <i class="fas fa-download mr-2"></i> Télécharger un Rapport
+    </button>
+</div>
+        <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Gestion de la Base de Connaissances</h2>
+            <div class="mb-4">
+                <button onclick="openKbModal()" class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded shadow-lg transition duration-300">
+                    <i class="fas fa-plus-circle mr-2"></i> Ajouter une Connaissance
+                </button>
+            </div>
+            <div class="bg-white shadow-xl rounded-lg overflow-x-auto">
+                <table class="min-w-full">
+                    <thead class="bg-gray-800 text-white">
+                        <tr>
+                            <th class="w-1/12 text-left py-3 px-4 uppercase font-semibold text-sm">ID</th>
+                            <th class="w-2/12 text-left py-3 px-4 uppercase font-semibold text-sm">Catégorie</th>
+                            <th class="w-6/12 text-left py-3 px-4 uppercase font-semibold text-sm">Question Type</th>
+                            <th class="w-3/12 text-left py-3 px-4 uppercase font-semibold text-sm">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="kb-table-body" class="text-gray-700">
+                        </tbody>
+                </table>
+                <div class="flex justify-between items-center p-4">
+                    <button id="kb-prev-btn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l disabled:opacity-50 disabled:cursor-not-allowed">
+                        &laquo; Précédent
+                    </button>
+                    <span id="kb-page-info" class="text-sm text-gray-700">Page 1 sur 1</span>
+                    <button id="kb-next-btn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r disabled:opacity-50 disabled:cursor-not-allowed">
+                        Suivant &raquo;
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Gestion des Tickets et Réclamations</h3>
+            <div class="bg-white shadow-xl rounded-lg overflow-x-auto">
+                <table class="min-w-full">
+                    <thead class="bg-gray-800 text-white">
+                        <tr>
+                            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">ID</th>
+                            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Utilisateur</th>
+                            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Description</th>
+                            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Date</th>
+                            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Statut</th>
+                            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reclamations-table-body" class="text-gray-700">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div>
+            <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Gestion des Utilisateurs</h3>
+            <button onclick="openUserModal()" class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded shadow-lg">
+        <i class="fas fa-plus mr-2"></i> Ajouter un Utilisateur
+    </button>
+            <div class="bg-white shadow-xl rounded-lg overflow-x-auto">
+                <table class="min-w-full">
+                    <thead class="bg-gray-800 text-white">
+                        <tr>
+                            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">ID</th>
+                            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Nom</th>
+                            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Email</th>
+                            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Téléphone</th>
+                            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Rôle</th>
+                            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Inscrit le</th>
+                            <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="users-table-body" class="text-gray-700">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+     <div class="mt-12">
+    <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Gestion des Demandes de Rendez-vous</h3>
+    <div class="bg-white shadow-xl rounded-lg overflow-x-auto">
+        <table class="min-w-full admin-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom du Prospect</th>
+                    <th>Email</th>
+                    <th>Téléphone</th>
+                    <th>Date Souhaitée</th>
+                    <th>Sujet</th>
+                    <th>Statut</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="appointments-table-body" class="text-gray-700">
+                <!-- Les rendez-vous seront chargés ici par JavaScript -->
+            </tbody>
+        </table>
+    </div>
+</div>
+    </div>
+</div>
+
+<div id="user-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('user-modal')">&times;</span>
+        <h3 id="user-modal-title" class="text-xl font-bold mb-4">Ajouter un Utilisateur</h3>
+        <form id="user-form">
+            <input type="hidden" id="user-id">
+            <div class="mb-4">
+                <label for="user-name" class="block text-gray-700">Nom :</label>
+                <input type="text" id="user-name" class="w-full p-2 border rounded" required>
+            </div>
+            <div class="mb-4">
+                <label for="user-email" class="block text-gray-700">Email :</label>
+                <input type="email" id="user-email" class="w-full p-2 border rounded" required>
+            </div>
+            <div class="mb-4">
+                <label for="user-phone" class="block text-gray-700">Téléphone :</label>
+                <input type="tel" id="user-phone" class="w-full p-2 border rounded">
+            </div>
+            <div class="mb-4" id="password-container">
+                <label for="user-password" class="block text-gray-700">Mot de passe :</label>
+                <input type="password" id="user-password" class="w-full p-2 border rounded" required>
+            </div>
+            <div class="mb-4">
+                <label for="user-type" class="block text-gray-700">Rôle :</label>
+                <select id="user-type" class="w-full p-2 border rounded">
+                   <option value="prospect">Prospect</option>
+                   <option value="student">Étudiant</option>
+                   <option value="admin">Administrateur</option>
+                </select>
+            </div>
+            <button type="submit" class="w-full bg-teal-600 hover:bg-teal-800 text-white font-bold py-2 px-4 rounded">Enregistrer</button>
+        </form>
+    </div>
+</div>
+<div id="kb-modal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
+    <div class="relative top-20 mx-auto p-5 border w-11/12 md:w-1/2 shadow-lg rounded-md bg-white">
+        <div class="mt-3">
+            <h3 id="modal-title" class="text-lg leading-6 font-medium text-gray-900 text-center">Ajouter une Connaissance</h3>
+            <form id="kb-form" class="mt-4 space-y-4">
+                <input type="hidden" id="kb-id" name="id">
+                <div>
+                    <label for="kb-category" class="block text-sm font-medium text-gray-700 text-left">Catégorie</label>
+                    <input type="text" id="kb-category" name="category" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" required>
+                </div>
+                <div>
+                    <label for="kb-question" class="block text-sm font-medium text-gray-700 text-left">Question Type</label>
+                    <input type="text" id="kb-question" name="question" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" required>
+                </div>
+                <div>
+                    <label for="kb-content" class="block text-sm font-medium text-gray-700 text-left">Contenu / Réponse</label>
+                    <textarea id="kb-content" name="content" rows="6" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" required></textarea>
+                </div>
+            </form>
+            <div class="items-center px-4 py-3 text-center mt-4">
+                <button id="kb-save-btn" class="px-4 py-2 bg-green-500 text-white text-base font-medium rounded-md w-auto shadow-sm hover:bg-green-700">
+                    Enregistrer
+                </button>
+                <button onclick="closeKbModal()" class="ml-2 px-4 py-2 bg-gray-500 text-white text-base font-medium rounded-md w-auto shadow-sm hover:bg-gray-700">
+                    Annuler
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Modal des statistiques du chatbot -->
+    <div class="modal" id="statsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-chart-bar"></i> Statistiques du Chatbot</h3>
+                <button class="close-modal" onclick="closeModal('statsModal')">&times;</button>
+            </div>
+            <div class="admin-panel-content p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-blue-50 p-4 rounded-lg shadow-md border border-blue-200">
+                    <h4 class="text-lg font-semibold text-blue-700 mb-2">Total Utilisateurs</h4>
+                    <p id="totalUsersCount" class="text-3xl font-bold text-blue-600">0</p>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg shadow-md border border-green-200">
+                    <h4 class="text-lg font-semibold text-green-700 mb-2">Messages envoyés</h4>
+                    <p id="totalMessagesCount" class="text-3xl font-bold text-green-600">0</p>
+                </div>
+                <div class="bg-yellow-50 p-4 rounded-lg shadow-md border border-yellow-200">
+                    <h4 class="text-lg font-semibold text-yellow-700 mb-2">Réclamations en attente</h4>
+                    <p id="pendingReclamationsCount" class="text-3xl font-bold text-yellow-600">0</p>
+                </div>
+                <div class="bg-purple-50 p-4 rounded-lg shadow-md border border-purple-200">
+                    <h4 class="text-lg font-semibold text-purple-700 mb-2">Administrateurs</h4>
+                    <p id="adminUsersCount" class="text-3xl font-bold text-purple-600">0</p>
+                </div>
+                <!-- Plus de stats peuvent être ajoutées ici -->
+            </div>
+        </div>
+    </div>
+
+    <div class="history-sidebar" id="historySidebar">
+    <div class="history-sidebar-header">
+        <h3><i class="fas fa-history"></i> Historique</h3>
+        <button class="close-modal" onclick="toggleHistorySidebar()">&times;</button>
+    </div>
+    <div class="p-4">
+        <button class="btn btn-primary w-full" onclick="createNewConversation()">
+            <i class="fas fa-plus-circle mr-2"></i> Nouvelle Conversation
+        </button>
+    </div>
+    <div class="history-sidebar-content" id="conversationsList">
+        <p class="text-gray-400 text-center py-4">Chargement...</p>
+    </div>
+</div>
+     <script>
+    // =========================================================================
+    // == ÉTAT GLOBAL DE L'APPLICATION
+    // =========================================================================
+    let isLoggedIn = false;
+    let currentUser = null; // Stocke les infos de l'utilisateur connecté {id, name, email, type, token}
+    let currentConversationId = null; // Suit la conversation active pour l'historique
+    let guestMessageCount = 0;
+    const GUEST_MESSAGE_LIMIT = 3; 
+    let chatHistoryForContext = [];
+
+    let kbCurrentPage = 1;
+    let kbTotalPages = 1;
+    const KB_PAGE_SIZE = 10;
+
+// =========================================================================
+// == INITIALISATION DE L'APPLICATION
+// =========================================================================
+document.addEventListener('DOMContentLoaded', async () => {
+    // --- 1. AUTHENTIFICATION ---
+    const storedUser = localStorage.getItem('currentUser');
+    if (storedUser) {
+        try {
+            currentUser = JSON.parse(storedUser);
+            isLoggedIn = true;
+        } catch (e) {
+            console.error("Erreur de session, nettoyage.", e);
+            localStorage.removeItem('currentUser');
+        }
+    } else {
+        guestMessageCount = parseInt(localStorage.getItem('guestMessageCount') || '0');
+    }
+
+    checkAdminStatus();
+    populateSidebar();
+    updateAuthInterface();
+
+    // --- 2. RÉCUPÉRATION DES STATISTIQUES + GRAPHIQUE ---
+    await fetchStats(); // On attend que les stats soient chargées
+
+    if (document.getElementById('statsChart')) {
+        const ctx = document.getElementById('statsChart').getContext('2d');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Utilisateurs', 'Messages', 'Tickets', 'Admins'],
+                datasets: [{
+                    label: 'Statistiques',
+                    data: [
+                        parseInt(document.getElementById('totalUsersCount')?.textContent || '0'),
+                        parseInt(document.getElementById('totalMessagesCount')?.textContent || '0'),
+                        parseInt(document.getElementById('pendingReclamationsCount')?.textContent || '0'),
+                        parseInt(document.getElementById('adminUsersCount')?.textContent || '0')
+                    ],
+                    backgroundColor: ['#60a5fa', '#34d399', '#facc15', '#c084fc'],
+                    borderRadius: 12,
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Résumé des Statistiques',
+                        font: {
+                            size: 22,
+                            weight: 'bold',
+                            family: 'Arial'
+                        },
+                        color: '#1f2937',
+                        padding: {
+                            top: 20,
+                            bottom: 30
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: '#1f2937',
+                        titleColor: '#ffffff',
+                        bodyColor: '#e5e7eb',
+                        borderColor: '#9ca3af',
+                        borderWidth: 1
+                    },
+                    legend: { display: false },
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'end',
+                        color: '#1f2937',
+                        font: { weight: 'bold' }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: { display: false },
+                        ticks: {
+                            color: '#4b5563',
+                            font: { size: 14 }
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            color: '#4b5563',
+                            font: { size: 14 }
+                        },
+                        grid: {
+                            color: '#e5e7eb'
+                        }
+                    }
+                },
+                animation: {
+                    duration: 1000,
+                    easing: 'easeOutBounce'
+                }
+            },
+            plugins: [ChartDataLabels] // Assure-toi que ChartDataLabels est bien importé
+        });
+    }
+
+    // --- 3. INTERFACE UTILISATEUR ---
+    
+    
+    
+
+    // --- 4. LISTENERS ---
+    setupEventListeners();
+
+    // --- 5. CHAT INIT ---
+    if (isLoggedIn) {
+        loadMyAppointments();
+        fetchConversations();
+        addMessage(`Bonjour ${currentUser.name}, heureux de vous revoir !`, 'bot');
+    } else {
+        addMessage("Bonjour ! Je suis votre assistant IAM. Comment puis-je vous aider aujourd'hui ?", 'bot');
+    }
+});
+
+
+// DANS VOTRE SCRIPT JAVASCRIPT
+// REMPLACEZ la fonction setupEventListeners par celle-ci
+
+function setupEventListeners() {
+    // --- Formulaires ---
+    document.getElementById('loginForm').addEventListener('submit', handleLogin);
+    document.getElementById('registerForm').addEventListener('submit', handleRegister);
+    document.getElementById('kb-form').addEventListener('submit', handleKbFormSubmit);
+ 
+document.getElementById('user-form').addEventListener('submit', handleUserFormSubmit);
+    // --- Actions du Chat ---
+    document.querySelector('.send-btn').addEventListener('click', sendMessage);
+    const messageInput = document.getElementById('messageInput');
+    messageInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            sendMessage();
+        }
+    });
+    messageInput.addEventListener('input', function() {
+        this.style.height = 'auto';
+        this.style.height = (this.scrollHeight) + 'px';
+    });
+
+    // --- Panneau d'Administration ---
+    document.getElementById('download-report-btn').addEventListener('click', generateReport); // On appelle une fonction dédiée
+    document.getElementById('kb-prev-btn').addEventListener('click', prevKbPage);
+    document.getElementById('kb-next-btn').addEventListener('click', nextKbPage);
+    
+    
+    // --- FIN DES MODIFICATIONS POUR LA VOIX ---
+
+    // --- Utilitaires ---
+    window.addEventListener('click', (e) => {
+        if (e.target.classList.contains('modal')) {
+            closeModal(e.target.id);
+        }
+    });
+}
+ // =========================================================================
+    // == LOGIQUE PRINCIPALE DU CHAT
+    // =========================================================================
+    // =========================================================================
+// == LOGIQUE PRINCIPALE DU CHAT (AVEC LIMITE POUR INVITÉS)
+// =========================================================================
+
+async function sendMessage() {
+    const input = document.getElementById('messageInput');
+    const message = input.value.trim();
+    if (!message) return;
+
+    if (!isLoggedIn) {
+        if (guestMessageCount >= GUEST_MESSAGE_LIMIT) {
+            addMessage("Vous avez atteint votre limite de messages. Veuillez vous connecter ou vous inscrire pour continuer.", 'bot');
+            displayLoginOrRegisterOptions();
+            return;
+        }
+        guestMessageCount++;
+        localStorage.setItem('guestMessageCount', guestMessageCount.toString());
+    }
+
+    addMessage(message, 'user');
+    // On met à jour l'historique avec le message de l'utilisateur
+    chatHistoryForContext.push({ role: 'user', content: message });
+
+    showTypingIndicator();
+    input.value = '';
+    input.style.height = 'auto';
+
+    const botParagraphElement = addMessage('', 'bot', true);
+    let fullResponseText = '';
+
+    try {
+        const response = await fetch('/chatbtot2BD/api/chat.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${currentUser ? currentUser.token : ''}` },
+            body: JSON.stringify({
+                action: 'get_bot_response',
+                message: message,
+                conversationId: currentConversationId,
+                history: chatHistoryForContext
+            })
+        });
+        
+        hideTypingIndicator();
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+
+        while (true) {
+            const { value, done } = await reader.read();
+            if (done) {
+                // Le stream est terminé, on ajoute la réponse complète à l'historique
+                chatHistoryForContext.push({ role: 'model', content: fullResponseText });
+                if (chatHistoryForContext.length > 6) chatHistoryForContext = chatHistoryForContext.slice(-6);
+                break;
+            }
+            
+            const chunk = decoder.decode(value, { stream: true });
+            const lines = chunk.split('\n\n');
+
+            for (const line of lines) {
+                if (line.startsWith('data: ')) {
+                    const jsonStr = line.substring(6);
+                    if (jsonStr) {
+                        try {
+                            const data = JSON.parse(jsonStr);
+                            if (data.text) {
+                                fullResponseText += data.text;
+                                botParagraphElement.textContent = fullResponseText;
+                                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                            }
+                            if (data.new_conversation_id) {
+                                currentConversationId = data.new_conversation_id;
+                                fetchConversations();
+                            }
+                        } catch(e) { /* Ignorer les erreurs de parsing JSON partiel */ }
+                    }
+                }
+            }
+        }
+    } catch (error) {
+        console.error('Fetch/Stream Error:', error);
+        botParagraphElement.textContent = "Oups, une erreur de connexion est survenue.";
+    }
+}
+
+// REMPLACEZ la fonction addMessage existante par celle-ci
+
+function addMessage(content, sender, returnElement = false, isHTML = false) {
+    const messagesContainer = document.getElementById('chatMessages');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'message';
+
+    const avatarIcon = sender === 'user' ? 'fas fa-user' : 'fas fa-robot';
+    const messageClass = sender === 'user' ? 'user-message' : 'bot-message';
+
+    const avatarDiv = document.createElement('div');
+    avatarDiv.className = `message-avatar ${sender}-avatar`;
+    avatarDiv.innerHTML = `<i class="${avatarIcon}"></i>`;
+
+    const contentDiv = document.createElement('div');
+    contentDiv.className = `message-content ${messageClass}`;
+
+    const p = document.createElement('div');
+    if (isHTML) {
+        p.innerHTML = content;
+    } else {
+        p.textContent = content;
+    }
+
+    contentDiv.appendChild(p);
+    messageDiv.appendChild(avatarDiv);
+    messageDiv.appendChild(contentDiv);
+
+    messagesContainer.appendChild(messageDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+    return returnElement ? p : null;
+}
+
+function showTypingIndicator() {
+        document.getElementById('typingIndicator').style.display = 'flex';
+    }
+
+    function hideTypingIndicator() {
+        document.getElementById('typingIndicator').style.display = 'none';
+    }
+
+    // AJOUTEZ CETTE FONCTION À VOTRE SCRIPT
+
+async function generateReport() {
+    if (!isLoggedIn || !currentUser || currentUser.type !== 'admin') {
+        showNotification("Action réservée aux administrateurs.", 'error');
+        return;
+    }
+
+    showNotification("Génération de votre rapport en cours...", 'info');
+
+    try {
+        const response = await fetch('/chatbtot2BD/api/report_generator.php', {
+            method: 'GET',
+            headers: { 'Authorization': `Bearer ${currentUser.token}` }
+        });
+
+        if (!response.ok) {
+            throw new Error('La génération du rapport a échoué. Statut: ' + response.status);
+        }
+
+        const disposition = response.headers.get('Content-Disposition');
+        let filename = 'rapport-iam.pdf';
+        if (disposition && disposition.indexOf('attachment') !== -1) {
+            const filenameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
+            const matches = filenameRegex.exec(disposition);
+            if (matches != null && matches[1]) { 
+                filename = matches[1].replace(/['"]/g, '');
+            }
+        }
+
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.style.display = 'none';
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        a.remove();
+
+    } catch (error) {
+        console.error('Erreur lors du téléchargement du rapport:', error);
+        showNotification('Impossible de télécharger le rapport.', 'error');
+    }
+}
+
+    // =========================================================================
+// == GESTION DE L'AUTHENTIFICATION (AVEC RESET DU COMPTEUR)
+// =========================================================================
+async function handleLogin(e) {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+    try {
+        const response = await fetch('/chatbtot2BD/api/auth.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password, action: 'login' })
+        });
+        const result = await response.json();
+    
+        if (result.success) {
+            isLoggedIn = true;
+            currentUser = result.user;
+            localStorage.setItem('currentUser', JSON.stringify(currentUser));
+            
+            // --- AJOUT : On réinitialise le compteur invité ---
+            localStorage.removeItem('guestMessageCount');
+            guestMessageCount = 0;
+            
+            updateAuthInterface();
+            closeModal('loginModal');
+            showNotification(`Bienvenue ${currentUser.name} !`, 'success');
+            checkAdminStatus();
+            loadMyAppointments();
+            populateSidebar();
+            createNewConversation(true);
+        } else {
+            showNotification(result.message, 'error');
+        }
+    } catch(err) { 
+        showNotification('Erreur de connexion au serveur.', 'error'); 
+    }
+}
+
+
+    async function handleRegister(e) {
+        e.preventDefault();
+        const formData = {
+            name: document.getElementById('registerName').value,
+            email: document.getElementById('registerEmail').value,
+            phone: document.getElementById('registerPhone').value,
+            type: document.getElementById('registerType').value,
+            password: document.getElementById('registerPassword').value,
+            action: 'register'
+        };
+        try {
+            const response = await fetch('/chatbtot2BD/api/auth.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+            const result = await response.json();
+            if (result.success) {
+                showNotification("Inscription réussie. Veuillez vous connecter.", 'success');
+                closeModal('registerModal');
+            } else {
+                showNotification(result.message, 'error');
+            }
+        } catch(err) { showNotification('Erreur de connexion au serveur.', 'error'); }
+    }
+
+ 
+/**
+ * Affiche dynamiquement le formulaire de prise de RDV dans le chat.
+ */
+function displayAppointmentForm() {
+    const html = `
+    <form id="appointment-form" class="space-y-4 p-4 bg-gray-100 rounded-lg shadow">
+        <div>
+            <label for="rdv-name" class="block font-medium">Nom complet :</label>
+            <input id="rdv-name" type="text" required class="w-full p-2 border rounded" />
+        </div>
+        <div>
+            <label for="rdv-email" class="block font-medium">Email :</label>
+            <input id="rdv-email" type="email" required class="w-full p-2 border rounded" />
+        </div>
+        <div>
+            <label for="rdv-phone" class="block font-medium">Téléphone :</label>
+            <input id="rdv-phone" type="tel" class="w-full p-2 border rounded" />
+        </div>
+        <div>
+            <label for="rdv-date" class="block font-medium">Date souhaitée :</label>
+            <input id="rdv-date" type="date" required class="w-full p-2 border rounded" />
+        </div>
+        <div>
+            <label for="rdv-subject" class="block font-medium">Sujet :</label>
+            <textarea id="rdv-subject" rows="3" class="w-full p-2 border rounded"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Envoyer</button>
+    </form>
+    `;
+
+    addMessage(html, 'bot', false, true);
+    document.getElementById('appointment-form').addEventListener('submit', submitAppointment);
+}
+
+window.displayAppointmentForm = displayAppointmentForm;
+/**
+ * Gère la soumission du formulaire de RDV.
+ */
+async function submitAppointment(e) {
+    e.preventDefault();
+
+    const data = {
+        name: document.getElementById('rdv-name').value,
+        email: document.getElementById('rdv-email').value,
+        phone: document.getElementById('rdv-phone').value,
+        date: document.getElementById('rdv-date').value,
+        subject: document.getElementById('rdv-subject').value
+    };
+
+    try {
+        const response = await fetch('/chatbtot2BD/api/appointments_manager.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+        if (result.success) {
+            addMessage("✅ Votre demande de rendez-vous a été enregistrée avec succès !", 'bot');
+        } else {
+            addMessage("❌ Erreur : " + (result.message || "impossible d'enregistrer."), 'bot');
+        }
+    } catch (err) {
+        addMessage("❌ Erreur réseau lors de l'envoi de la demande.", 'bot');
+        console.error(err);
+    }
+
+    // Supprimer le formulaire
+    document.getElementById('appointment-form').closest('.message').remove();
+}
+
+/**
+ * Déclenche l'affichage du formulaire de RDV en l'introduisant par un message du bot.
+ */
+function triggerAppointmentProcess() {
+    addMessage("Bien sûr, je peux vous aider à programmer un rendez-vous. Veuillez remplir les informations ci-dessous.", 'bot');
+    displayAppointmentForm();
+}
+window.triggerAppointmentProcess = triggerAppointmentProcess; // 🔧 nécessaire
+
+
+// =========================================================================
+// == GESTION DES RENDEZ-VOUS (ADMIN)
+// =========================================================================
+
+async function loadAppointments() {
+    if (!isLoggedIn || !currentUser || currentUser.type !== 'admin') return;
+    try {
+        const response = await fetch('/chatbtot2BD/api/appointments_manager.php?action=get_all', {
+            headers: { 'Authorization': `Bearer ${currentUser.token}` }
+        });
+        const result = await response.json();
+        
+        if (result.success) {
+            const tbody = document.getElementById('appointments-table-body');
+            tbody.innerHTML = '';
+            if (result.data.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="8" class="text-center p-4">Aucune demande de rendez-vous.</td></tr>';
+                return;
+            }
+            result.data.forEach(rdv => {
+                const rdvDate = new Date(rdv.appointment_date).toLocaleDateString('fr-FR');
+                const creationDate = new Date(rdv.created_at).toLocaleString('fr-FR');
+                
+                const row = document.createElement('tr');
+                row.className = 'border-b hover:bg-gray-50';
+                row.innerHTML = `
+                    <td class="py-3 px-4">${rdv.id}</td>
+                    <td class="py-3 px-4 font-medium">${rdv.prospect_name}</td>
+                    <td class="py-3 px-4">${rdv.prospect_email}</td>
+                    <td class="py-3 px-4">${rdv.prospect_phone || 'N/A'}</td>
+                    <td class="py-3 px-4">${rdvDate}</td>
+                    <td class="py-3 px-4 text-sm">${rdv.subject || 'Aucun'}</td>
+                    <td class="py-3 px-4">
+                        <select onchange="updateAppointmentStatus(this.value, ${rdv.id})" class="p-1 border rounded-md text-sm">
+                            <option value="pending" ${rdv.status === 'pending' ? 'selected' : ''}>En attente</option>
+                            <option value="confirmed" ${rdv.status === 'confirmed' ? 'selected' : ''}>Confirmé</option>
+                            <option value="cancelled" ${rdv.status === 'cancelled' ? 'selected' : ''}>Annulé</option>
+                        </select>
+                    </td>
+                    <td class="py-3 px-4">
+                        <button onclick="deleteAppointment(${rdv.id})" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded" title="Supprimer">&times;</button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+    } catch(e) { 
+        console.error("Erreur loadAppointments", e);
+        document.getElementById('appointments-table-body').innerHTML = '<tr><td colspan="8" class="text-center p-4 text-red-500">Erreur de chargement.</td></tr>';
+    }
+}
+
+async function updateAppointmentStatus(newStatus, rdvId) {
+    await fetch('/chatbtot2BD/api/appointments_manager.php', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${currentUser.token}`, 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ action: 'update_status', id: rdvId, status: newStatus })
+    });
+    showNotification('Statut du rendez-vous mis à jour.', 'success');
+}
+
+async function deleteAppointment(rdvId) {
+    if (!confirm('Êtes-vous sûr de vouloir supprimer cette demande de rendez-vous ?')) return;
+    const response = await fetch('/chatbtot2BD/api/appointments_manager.php', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${currentUser.token}`, 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ action: 'delete', id: rdvId })
+    });
+    const result = await response.json();
+    if (result.success) {
+        showNotification('Rendez-vous supprimé.', 'info');
+        loadAppointments(); // Recharger la liste
+    }
+}
+
+/**
+ * Charge et affiche les rendez-vous pour l'utilisateur connecté.
+ */
+async function loadMyAppointments() {
+    if (!isLoggedIn || !currentUser) return;
+
+    const section = document.getElementById('my-appointments-section');
+    const listContainer = document.getElementById('my-appointments-list');
+    
+    if (currentUser.type === 'admin') {
+        section.classList.add('hidden');
+        return;
+    }
+    
+    section.classList.remove('hidden');
+    listContainer.innerHTML = '<p class="text-xs text-gray-400">Chargement...</p>';
+
+    try {
+        const response = await fetch('/chatbtot2BD/api/appointments_manager.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': `Bearer ${currentUser.token}` },
+            body: new URLSearchParams({ 'action': 'get_my_appointments' })
+        });
+        const result = await response.json();
+
+        if (result.success && result.data.length > 0) {
+            listContainer.innerHTML = '';
+            result.data.forEach(rdv => {
+                const rdvDate = new Date(rdv.appointment_date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+                let statusClass = '';
+                let statusText = '';
+                let cancelButtonHtml = '';
+
+                // On n'affiche le bouton "Annuler" que si le RDV n'est pas déjà annulé
+                if (rdv.status !== 'cancelled') {
+                    cancelButtonHtml = `<button onclick="cancelMyAppointment(${rdv.id})" class="text-xs text-red-400 hover:text-red-600 ml-4">Annuler</button>`;
+                }
+
+                switch (rdv.status) {
+                    case 'confirmed':
+                        statusClass = 'bg-green-500'; statusText = 'Confirmé'; break;
+                    case 'cancelled':
+                        statusClass = 'bg-red-500'; statusText = 'Annulé'; break;
+                    default:
+                        statusClass = 'bg-yellow-500'; statusText = 'En attente'; break;
+                }
+
+                const rdvElement = document.createElement('div');
+                rdvElement.className = 'text-sm p-3 bg-gray-100 dark:bg-gray-700 rounded-lg';
+                rdvElement.innerHTML = `
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="font-semibold text-gray-800 dark:text-white">RDV du ${rdvDate}</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400" title="${rdv.subject || ''}">${rdv.subject || 'Aucun sujet'}</p>
+                        </div>
+                        <div class="text-xs font-bold text-white px-2 py-1 rounded-full inline-block ${statusClass}">
+                            ${statusText}
+                        </div>
+                    </div>
+                    ${cancelButtonHtml ? `<div class="text-right mt-2">${cancelButtonHtml}</div>` : ''}
+                `;
+                listContainer.appendChild(rdvElement);
+            });
+        } else {
+            listContainer.innerHTML = '<p class="text-xs text-gray-400">Aucune demande de rendez-vous trouvée.</p>';
+        }
+    } catch(e) {
+        console.error("Erreur loadMyAppointments", e);
+    }
+}
+async function cancelMyAppointment(rdvId) {
+    if (!confirm("Êtes-vous sûr de vouloir annuler cette demande de rendez-vous ?")) {
+        return;
+    }
+
+    try {
+        const response = await fetch('/chatbtot2BD/api/appointments_manager.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': `Bearer ${currentUser.token}` },
+            body: new URLSearchParams({ 
+                action: 'cancel_my_appointment',
+                id: rdvId 
+            })
+        });
+
+        const result = await response.json();
+        if (result.success) {
+            showNotification('Votre rendez-vous a bien été annulé.', 'success');
+            loadMyAppointments(); // On rafraîchit la liste pour voir le nouveau statut
+        } else {
+            showNotification(result.message || 'Une erreur est survenue.', 'error');
+        }
+    } catch (e) {
+        console.error("Erreur cancelMyAppointment", e);
+        showNotification('Erreur de communication avec le serveur.', 'error');
+    }
+}
+function logout() {
+    isLoggedIn = false;
+    currentUser = null;
+    currentConversationId = null;
+    localStorage.removeItem('currentUser');
+    
+    // --- AJOUT : On réinitialise aussi le compteur pour la prochaine session invitée ---
+    localStorage.removeItem('guestMessageCount');
+    guestMessageCount = 0;
+    
+    updateAuthInterface();
+    checkAdminStatus(); 
+    populateSidebar();
+    document.getElementById('my-appointments-section').classList.add('hidden'); 
+    document.getElementById('conversationsList').innerHTML = '<p class="text-gray-400 text-center py-4">Connectez-vous pour voir l\'historique.</p>';
+    document.getElementById('chatMessages').innerHTML = '';
+    addMessage("Bonjour ! Comment puis-je vous aider aujourd'hui ?", 'bot');
+    showNotification("Vous avez été déconnecté.", 'info');
+}
+
+    function updateAuthInterface() {
+        const authButtons = document.querySelector('.auth-buttons');
+        const userTypeSelector = document.getElementById('userType');
+        if (isLoggedIn) {
+            authButtons.innerHTML = `<span class="greeting">Bonjour, ${currentUser.name}</span><button class="btn btn-secondary" onclick="logout()">Déconnexion</button>`;
+            userTypeSelector.value = currentUser.type;
+            userTypeSelector.disabled = true;
+        } else {
+            authButtons.innerHTML = `<button class="btn btn-secondary" onclick="openModal('loginModal')">Connexion</button><button class="btn btn-primary" onclick="openModal('registerModal')">Inscription</button>`;
+            userTypeSelector.value = 'prospect';
+            userTypeSelector.disabled = false;
+        }
+    }
+
+    // =========================================================================
+    // == GESTION DE L'HISTORIQUE
+    // =========================================================================
+    function toggleHistorySidebar() {
+        const historySidebar = document.getElementById('historySidebar');
+        historySidebar.classList.toggle('open');
+        if (historySidebar.classList.contains('open') && isLoggedIn) {
+            fetchConversations();
+        }
+    }
+    
+    async function fetchConversations() {
+        if (!isLoggedIn) return;
+        const listContainer = document.getElementById('conversationsList');
+        listContainer.innerHTML = '<p class="text-gray-400 text-center py-4">Chargement...</p>';
+
+        try {
+            const response = await fetch(`/chatbtot2BD/api/chat.php?action=getConversations`, {
+                headers: { 'Authorization': `Bearer ${currentUser.token}` }
+            });
+            const result = await response.json();
+            
+            if (result.success && result.conversations.length > 0) {
+                listContainer.innerHTML = '';
+                result.conversations.forEach(conv => {
+                    const date = new Date(conv.start_time).toLocaleDateString('fr-FR', { month: 'short', day: 'numeric' });
+                    const item = document.createElement('div');
+                    item.className = `p-3 my-2 mx-4 rounded-lg cursor-pointer transition-all duration-200 flex justify-between items-center hover:bg-white/20 ${conv.id == currentConversationId ? 'bg-white/20' : 'bg-white/5'}`;
+                    item.innerHTML = `
+                        <div class="w-full" onclick="loadConversation(${conv.id})">
+                            <p class="font-semibold text-white truncate">${conv.title}</p>
+                            <p class="text-xs text-gray-400">${date}</p>
+                        </div>
+                        <div class="flex">
+                            <button onclick="event.stopPropagation(); renameConversation(${conv.id}, '${conv.title}')" class="text-gray-400 hover:text-white p-1"><i class="fas fa-pen"></i></button>
+                            <button onclick="event.stopPropagation(); deleteConversation(${conv.id})" class="text-gray-400 hover:text-white p-1"><i class="fas fa-trash"></i></button>
+                        </div>
+                    `;
+                    listContainer.appendChild(item);
+                });
+            } else {
+                listContainer.innerHTML = '<p class="text-gray-400 text-center py-4">Aucune conversation.</p>';
+            }
+        } catch(e) { console.error("Erreur fetchConversations", e); }
+    }
+
+    function createNewConversation(silent = false) {
+        currentConversationId = null;
+        document.getElementById('chatMessages').innerHTML = '';
+        addMessage("Bonjour ! Je suis prêt pour notre nouvelle conversation. Comment puis-je vous aider ?", 'bot');
+        if (!silent) {
+            toggleHistorySidebar();
+        }
+        fetchConversations();
+    }
+
+    async function loadConversation(conversationId) {
+        if (!isLoggedIn) return;
+        currentConversationId = conversationId;
+        const chatMessages = document.getElementById('chatMessages');
+        chatMessages.innerHTML = '<p class="text-center text-gray-400">Chargement de la conversation...</p>';
+        
+        try {
+            const response = await fetch(`/chatbtot2BD/api/chat.php?action=getChatHistory&conversationId=${conversationId}`, {
+                 headers: { 'Authorization': `Bearer ${currentUser.token}` }
+            });
+            const result = await response.json();
+            chatMessages.innerHTML = '';
+            if(result.success) {
+                result.history.forEach(msg => addMessage(msg.message_text, msg.sender));
+            }
+        } catch(e) { console.error("Erreur loadConversation", e); }
+
+        fetchConversations(); 
+        if (document.getElementById('historySidebar').classList.contains('open')) {
+            toggleHistorySidebar();
+        }
+    }
+
+   async function renameConversation(conversationId, oldTitle) {
+    const newTitle = prompt("Entrez le nouveau nom pour cette conversation :", oldTitle);
+    if (!newTitle || newTitle.trim() === '') return;
+    
+    await fetch('/chatbtot2BD/api/chat.php', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${currentUser.token}` },
+        body: JSON.stringify({
+            action: 'renameConversation', // <-- L'INSTRUCTION MANQUANTE A ÉTÉ AJOUTÉE ICI
+            conversationId: conversationId, 
+            newTitle: newTitle.trim()
+        })
+    });
+    fetchConversations(); // Rafraîchir la liste pour voir le nouveau nom
+}
+ async function deleteConversation(conversationId) {
+    if (!confirm("Êtes-vous sûr de vouloir supprimer cette conversation ?")) return;
+
+    await fetch('/chatbtot2BD/api/chat.php', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${currentUser.token}` },
+        body: JSON.stringify({ 
+            action: 'deleteConversation', // <-- L'INSTRUCTION MANQUANTE A ÉTÉ AJOUTÉE ICI
+            conversationId: conversationId
+        })
+    });
+
+    if (currentConversationId == conversationId) {
+        // Si on supprime la conversation active, on en crée une nouvelle
+        currentConversationId = null; 
+        createNewConversation(true);
+    } else {
+        // Sinon, on rafraîchit simplement la liste
+        fetchConversations();
+    }
+}
+   // =========================================================================
+    // == GESTION DE L'ESCALADE
+    // =========================================================================
+    function displayEscalationOptions(originalMessage) {
+        const lastBotMessage = document.querySelector('.message:last-child .message-content');
+        if (!lastBotMessage) return;
+
+        const buttonContainer = document.createElement('div');
+        buttonContainer.className = 'quick-actions mt-2';
+        buttonContainer.innerHTML = `
+            <span class="quick-action escalation-btn" data-action="yes">Oui, transmettre</span>
+            <span class="quick-action escalation-btn" data-action="no">Non, merci</span>
+        `;
+        lastBotMessage.appendChild(buttonContainer);
+
+        buttonContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('escalation-btn')) {
+                const choice = e.target.dataset.action;
+                handleEscalationChoice(choice, originalMessage);
+                buttonContainer.remove();
+            }
+        });
+    }
+
+    function handleEscalationChoice(choice, originalMessage) {
+        if (choice === 'yes') {
+            if (!isLoggedIn) {
+                addMessage("Pour transmettre votre question, veuillez d'abord vous connecter.", 'bot');
+                setTimeout(() => openModal('loginModal'), 500);
+            } else {
+                addMessage("Merci. Je transmets votre demande...", 'bot');
+                createTicketFromEscalation(originalMessage);
+            }
+        } else {
+            addMessage("D'accord. N'hésitez pas si vous avez une autre question.", 'bot');
+        }
+    }
+
+    function renderStatsChart() {
+    const canvas = document.getElementById('statsChart');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    const chartData = [
+        parseInt(document.getElementById('totalUsersCount')?.textContent || '0'),
+        parseInt(document.getElementById('totalMessagesCount')?.textContent || '0'),
+        parseInt(document.getElementById('pendingReclamationsCount')?.textContent || '0'),
+        parseInt(document.getElementById('adminUsersCount')?.textContent || '0')
+    ];
+
+    if (chartData.every(v => v === 0)) return; // facultatif
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Utilisateurs', 'Messages', 'Tickets', 'Admins'],
+            datasets: [{
+                label: 'Statistiques',
+                data: chartData,
+                backgroundColor: ['#3b82f6', '#22c55e', '#eab308', '#a855f7'],
+                borderRadius: 12
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: false }
+            },
+            scales: {
+                y: { beginAtZero: true }
+            }
+        }
+    });
+}
+
+
+    async function createTicketFromEscalation(message) {
+        const response = await fetch('/chatbtot2BD/api/reclamations_manager.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization': `Bearer ${currentUser.token}`
+            },
+            body: new URLSearchParams({
+                'action': 'create_ticket_from_bot',
+                'description': message
+            })
+        });
+        const result = await response.json();
+        if (result.success) {
+            addMessage(`Votre demande a été transmise (Ticket #${result.ticket_id}). Un conseiller vous répondra par email.`, 'bot');
+        } else {
+            addMessage("Désolé, une erreur est survenue lors de la transmission.", 'bot');
+        }
+    }
+
+    // =========================================================================
+    // == FONCTIONS DU PANNEAU D'ADMINISTRATION
+    // =========================================================================
+    function checkAdminStatus() {
+        const adminPanel = document.getElementById('admin-panel-container');
+        if (isLoggedIn && currentUser && currentUser.type === 'admin') {
+            adminPanel.classList.remove('hidden');
+            fetchStats();
+            loadKnowledgeBase();
+            loadReclamations();
+            loadUsers();
+            loadAppointments();
+        } else {
+            adminPanel.classList.add('hidden');
+        }
+    }
+
+  async function fetchStats() {
+    try {
+        const response = await fetch('/chatbtot2BD/api/stats_api.php', {
+            method: 'GET',
+            headers: { 'Authorization': `Bearer ${currentUser.token}` }
+        });
+        const result = await response.json();
+        if (result.success && result.stats) {
+            document.getElementById('totalUsersCount').textContent = result.stats.totalUsers || '0';
+            document.getElementById('totalMessagesCount').textContent = result.stats.totalMessages || '0';
+            document.getElementById('pendingReclamationsCount').textContent = result.stats.pendingReclamations || '0';
+            document.getElementById('adminUsersCount').textContent = result.stats.adminUsers || '0';
+        }
+    } catch (e) {
+        console.error("Erreur fetchStats", e);
+    }
+}
+async function loadKnowledgeBase(page = 1) {
+    if (!isLoggedIn || !currentUser || currentUser.type !== 'admin') return;
+    try {
+        kbCurrentPage = page;
+        const response = await fetch('/chatbtot2BD/api/knowledge_manager.php', {
+            method: 'POST',
+            headers: { 'Authorization': `Bearer ${currentUser.token}` },
+            body: new URLSearchParams({
+                'action': 'get_all',
+                'page': page,
+                'limit': KB_PAGE_SIZE
+            })
+        });
+        const result = await response.json();
+        
+        if (result.success) {
+            const tbody = document.getElementById('kb-table-body');
+            tbody.innerHTML = ''; // Vider la table
+            
+            if (!result.data || result.data.length === 0) {
+                 tbody.innerHTML = '<tr><td colspan="4" class="text-center p-4">Aucune donnée trouvée pour cette page.</td></tr>';
+            } else {
+                result.data.forEach(doc => {
+                    const row = document.createElement('tr');
+                    row.className = 'border-b hover:bg-gray-50';
+                    row.innerHTML = `
+                        <td class="py-3 px-4">${doc.id}</td>
+                        <td class="py-3 px-4">${doc.category}</td>
+                        <td class="py-3 px-4">${doc.question_variation}</td>
+                        <td class="py-3 px-4">
+                            <button onclick='openKbModal(${JSON.stringify(doc)})' class="text-sm bg-yellow-500 hover:bg-yellow-700 text-white py-1 px-3 rounded">Modifier</button>
+                            <button onclick="deleteEntry(${doc.id})" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-3 rounded ml-2">Supprimer</button>
+                        </td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            }
+            // On met à jour les contrôles de pagination avec les infos du backend
+            updateKbPaginationControls(result.pagination);
+        }
+    } catch(e) { 
+        console.error("Erreur lors du chargement de la base de connaissances:", e);
+        document.getElementById('kb-table-body').innerHTML = '<tr><td colspan="4" class="text-center p-4 text-red-500">Erreur de chargement.</td></tr>';
+    }
+}
+  function updateKbPaginationControls(pagination) {
+    const pageInfo = document.getElementById('kb-page-info');
+    const prevBtn = document.getElementById('kb-prev-btn');
+    const nextBtn = document.getElementById('kb-next-btn');
+
+    if (!pagination || pagination.totalPages === 0) {
+        kbTotalPages = 1;
+        pageInfo.textContent = 'Page 1 sur 1';
+        prevBtn.disabled = true;
+        nextBtn.disabled = true;
+        return;
+    }
+    
+    // On met à jour notre variable globale
+    kbTotalPages = pagination.totalPages;
+
+    pageInfo.textContent = `Page ${pagination.currentPage} sur ${pagination.totalPages}`;
+    prevBtn.disabled = pagination.currentPage <= 1;
+    nextBtn.disabled = pagination.currentPage >= pagination.totalPages;
+}
+  function prevKbPage() {
+    if (kbCurrentPage > 1) {
+        loadKnowledgeBase(kbCurrentPage - 1);
+    }
+}
+
+    function nextKbPage() {
+    if (kbCurrentPage < kbTotalPages) {
+        loadKnowledgeBase(kbCurrentPage + 1);
+    }
+}
+    function openKbModal(doc = null) {
+        const modal = document.getElementById('kb-modal');
+        const form = document.getElementById('kb-form');
+        const title = document.getElementById('modal-title');
+        form.reset();
+        document.getElementById('kb-id').value = '';
+        if (doc) {
+            title.innerText = 'Modifier une Connaissance';
+            document.getElementById('kb-id').value = doc.id;
+            document.getElementById('kb-category').value = doc.category;
+            document.getElementById('kb-question').value = doc.question_variation;
+            document.getElementById('kb-content').value = doc.content;
+        } else {
+            title.innerText = 'Ajouter une Connaissance';
+        }
+        modal.classList.remove('hidden');
+    }
+
+    function closeKbModal() {
+        document.getElementById('kb-modal').classList.add('hidden');
+    }
+
+    async function handleKbFormSubmit(event) {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+        const id = formData.get('id');
+        formData.append('action', id ? 'update_entry' : 'add_entry');
+
+        const response = await fetch('/chatbtot2BD/api/knowledge_manager.php', {
+            method: 'POST',
+            headers: { 'Authorization': `Bearer ${currentUser.token}` },
+            body: formData
+        });
+        const result = await response.json();
+        if (result.success) {
+            showNotification(result.message, 'success');
+            closeKbModal();
+            loadKnowledgeBase();
+        } else {
+            showNotification(result.message || 'Une erreur est survenue.', 'error');
+        }
+    }
+
+    async function deleteEntry(id) {
+        if (!confirm('Êtes-vous sûr ? La regénération de l\'embedding peut prendre un moment.')) return;
+        const response = await fetch('/chatbtot2BD/api/knowledge_manager.php', {
+            method: 'POST',
+            headers: { 'Authorization': `Bearer ${currentUser.token}` },
+            body: new URLSearchParams({ 'action': 'delete_entry', 'id': id })
+        });
+        const result = await response.json();
+        if (result.success) {
+            showNotification(result.message, 'success');
+            loadKnowledgeBase();
+        } else {
+            showNotification(result.message || 'Erreur lors de la suppression.', 'error');
+        }
+    }
+
+    async function loadReclamations() {
+        try {
+            const response = await fetch('/chatbtot2BD/api/reclamations_manager.php', {
+                method: 'POST',
+                headers: { 'Authorization': `Bearer ${currentUser.token}` },
+                body: new URLSearchParams({ 'action': 'get_all_reclamations' })
+            });
+            const result = await response.json();
+            if (result.success) {
+                const tbody = document.getElementById('reclamations-table-body');
+                tbody.innerHTML = '';
+                result.data.forEach(ticket => {
+                    const ticketDate = new Date(ticket.created_at).toLocaleString('fr-FR');
+                    tbody.innerHTML += `
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="py-3 px-4">${ticket.id}</td>
+                            <td class="py-3 px-4 text-sm">${ticket.email}</td>
+                            <td class="py-3 px-4 text-sm">${ticket.description}</td>
+                            <td class="py-3 px-4 text-sm">${ticketDate}</td>
+                            <td class="py-3 px-4">
+                                <select onchange="updateTicketStatus(this, ${ticket.id})" class="p-1 border rounded-md text-sm">
+                                    <option value="open" ${ticket.status === 'open' ? 'selected' : ''}>Ouvert</option>
+                                    <option value="in_progress" ${ticket.status === 'in_progress' ? 'selected' : ''}>En cours</option>
+                                    <option value="resolved" ${ticket.status === 'resolved' ? 'selected' : ''}>Résolu</option>
+                                    <option value="closed" ${ticket.status === 'closed' ? 'selected' : ''}>Fermé</option>
+                                </select>
+                            </td>
+                            <td class="py-3 px-4">
+                                <button onclick="deleteReclamation(${ticket.id})" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded">&times;</button>
+                            </td>
+                        </tr>
+                    `;
+                });
+            }
+        } catch(e) { console.error("Erreur loadReclamations", e); }
+    }
+
+    async function updateTicketStatus(selectElement, ticketId) {
+        const newStatus = selectElement.value;
+        await fetch('/chatbtot2BD/api/reclamations_manager.php', {
+            method: 'POST',
+            headers: { 'Authorization': `Bearer ${currentUser.token}` },
+            body: new URLSearchParams({ 'action': 'update_status', 'id': ticketId, 'status': newStatus })
+        });
+    }
+
+    async function deleteReclamation(ticketId) {
+        if (!confirm('Êtes-vous sûr de vouloir supprimer ce ticket ?')) return;
+        const response = await fetch('/chatbtot2BD/api/reclamations_manager.php', {
+            method: 'POST',
+            headers: { 'Authorization': `Bearer ${currentUser.token}` },
+            body: new URLSearchParams({ 'action': 'delete_reclamation', 'id': ticketId })
+        });
+        const result = await response.json();
+        if (result.success) {
+            loadReclamations();
+        }
+    }
+
+  // REMPLACEZ VOTRE FONCTION loadUsers PAR CELLE-CI
+
+async function loadUsers() {
+    try {
+        const response = await fetch('/chatbtot2BD/api/users_manager.php', {
+            method: 'POST',
+            headers: { 'Authorization': `Bearer ${currentUser.token}` },
+            body: new URLSearchParams({ 'action': 'get_all' })
+        });
+        const result = await response.json();
+
+        if (result.success) {
+            const tbody = document.getElementById('users-table-body');
+            tbody.innerHTML = ''; // On vide la table avant de la remplir
+
+            if (!result.data || result.data.length === 0) {
+                 tbody.innerHTML = '<tr><td colspan="7" class="text-center p-4">Aucun utilisateur trouvé.</td></tr>';
+                 return;
+            }
+
+            result.data.forEach(user => {
+                const joinDate = new Date(user.created_at).toLocaleDateString('fr-FR');
+                
+                const roleClass = user.user_type === 'admin' 
+                    ? 'bg-green-200 text-green-800' 
+                    : 'bg-gray-200 text-gray-800';
+
+                // =================================================================
+                // ==          C'EST CETTE PARTIE QUI A ÉTÉ CORRIGÉE            ==
+                // =================================================================
+                const row = document.createElement('tr');
+                row.className = 'border-b hover:bg-gray-50';
+                row.innerHTML = `
+                    <td class="py-3 px-4">${user.id}</td>
+                    <td class="py-3 px-4 font-medium">${user.name}</td>
+                    <td class="py-3 px-4">${user.email}</td>
+                    <td class="py-3 px-4">${user.phone || 'N/A'}</td>
+                    <td class="py-3 px-4">
+                        <span class="px-2 py-1 font-semibold leading-tight text-xs rounded-full ${roleClass}">
+                            ${user.user_type}
+                        </span>
+                    </td>
+                    <td class="py-3 px-4">${joinDate}</td>
+                    <td class="py-3 px-4">
+                        <button onclick='openUserModal(${JSON.stringify(user)})' class="text-sm bg-yellow-500 hover:bg-yellow-700 text-white py-1 px-3 rounded">Modifier</button>
+                        <button onclick="deleteUser(${user.id})" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-3 rounded ml-2">Supprimer</button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+    } catch (error) {
+        console.error("Erreur lors du chargement des utilisateurs:", error);
+        document.getElementById('users-table-body').innerHTML = '<tr><td colspan="7" class="text-center p-4 text-red-500">Erreur de chargement.</td></tr>';
+    }
+}
+
+// AJOUTEZ CE BLOC DE FONCTIONS À VOTRE SCRIPT JS
+
+function openUserModal(user = null) {
+    const form = document.getElementById('user-form');
+    form.reset();
+    const modalTitle = document.getElementById('user-modal-title');
+    const passwordContainer = document.getElementById('password-container');
+
+    if (user) { // Mode "Modification"
+        modalTitle.textContent = "Modifier l'Utilisateur";
+        document.getElementById('user-id').value = user.id;
+        document.getElementById('user-name').value = user.name;
+        document.getElementById('user-email').value = user.email;
+        document.getElementById('user-phone').value = user.phone;
+        document.getElementById('user-type').value = user.user_type;
+        passwordContainer.style.display = 'none'; // On ne modifie pas le mot de passe ici
+        document.getElementById('user-password').required = false;
+    } else { // Mode "Ajout"
+        modalTitle.textContent = "Ajouter un Utilisateur";
+        passwordContainer.style.display = 'block';
+        document.getElementById('user-password').required = true;
+    }
+    openModal('user-modal');
+}
+
+async function handleUserFormSubmit(e) {
+    e.preventDefault();
+    const userId = document.getElementById('user-id').value;
+    const url = '/chatbtot2BD/api/users_manager.php';
+    const isUpdate = !!userId;
+
+    const body = {
+        action: isUpdate ? 'update' : 'add',
+        id: userId,
+        name: document.getElementById('user-name').value,
+        email: document.getElementById('user-email').value,
+        phone: document.getElementById('user-phone').value,
+        user_type: document.getElementById('user-type').value,
+    };
+
+    if (!isUpdate) {
+        body.password = document.getElementById('user-password').value;
+    }
+
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${currentUser.token}` },
+        body: JSON.stringify(body)
+    });
+
+    const result = await response.json();
+    showNotification(result.message, result.success ? 'success' : 'error');
+    if (result.success) {
+        closeModal('user-modal');
+        loadUsers();
+    }
+}
+
+async function deleteUser(id) {
+    if (!confirm("Êtes-vous sûr de vouloir supprimer cet utilisateur ? Cette action est irréversible.")) return;
+
+    const response = await fetch('/chatbtot2BD/api/users_manager.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${currentUser.token}` },
+        body: JSON.stringify({ action: 'delete', id: id })
+    });
+    const result = await response.json();
+    showNotification(result.message, result.success ? 'success' : 'error');
+    if (result.success) {
+        loadUsers();
+    }
+}
+// =========================================================================
+// == GESTION DE LA BARRE LATÉRALE (SIDEBAR)
+// =========================================================================
+
+/**
+ * Remplit la barre latérale avec une liste de questions suggérées et cliquables.
+ */
+// DANS VOTRE SCRIPT JS
+// REMPLACEZ la fonction populateSidebar par celle-ci
+
+function populateSidebar() {
+    const featureList = document.getElementById('featureList');
+    if (!featureList) return;
+
+    featureList.innerHTML = '';
+
+    // === BOUTON PRINCIPAL DE RDV ===
+    const rdvButton = document.createElement('li');
+    rdvButton.className = "bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold text-center cursor-pointer p-3 rounded-lg transition";
+    rdvButton.innerHTML = `<i class="fas fa-calendar-check mr-2"></i> Prendre un rendez-vous`;
+    rdvButton.onclick = () => triggerAppointmentProcess();
+    featureList.appendChild(rdvButton);
+
+    // === QUESTIONS SUGGÉRÉES ===
+    const questions = [
+        "Quels sont les frais de scolarité ?",
+        "Comment puis-je m'inscrire ?",
+        "Proposez-vous des bourses d'études ?",
+        "Quelles sont les filières disponibles ?"
+    ];
+
+    questions.forEach(q => {
+        const li = document.createElement('li');
+        li.className = 'feature-list-item cursor-pointer text-sm hover:text-blue-600';
+        li.setAttribute('onclick', `sendQuickMessage('${q.replace(/'/g, "\\'")}')`);
+        li.innerHTML = `<i class="fas fa-paper-plane text-xs mr-2"></i> ${q}`;
+        featureList.appendChild(li);
+    });
+}
+
+/**
+ * Envoie un message rapide généré par un clic.
+ * @param {string} message - Le message à envoyer.
+ */
+function sendQuickMessage(message) {
+    const messageInput = document.getElementById('messageInput');
+    messageInput.value = message;
+    sendMessage();
+}
+    
+    // =========================================================================
+    // == UTILITAIRES
+    // =========================================================================
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if(modal) modal.style.display = 'flex';
+    }
+
+    function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if(modal) modal.style.display = 'none';
+    }
+    // AJOUTEZ CETTE NOUVELLE FONCTION
+
+function displayLoginOrRegisterOptions() {
+    const lastBotMessage = document.querySelector('.message:last-child .message-content');
+    if (!lastBotMessage) return;
+
+    const buttonContainer = document.createElement('div');
+    buttonContainer.className = 'quick-actions mt-2';
+    buttonContainer.innerHTML = `
+        <span class="quick-action" onclick="openModal('loginModal')">Se Connecter</span>
+        <span class="quick-action" onclick="openModal('registerModal')">S'inscrire</span>
+    `;
+    lastBotMessage.appendChild(buttonContainer);
+}
+
+    function showNotification(message, type = 'info') {
+        const container = document.body;
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        
+        const icon = document.createElement('span');
+        const text = document.createElement('span');
+        text.textContent = message;
+
+        let iconClass = 'fas ';
+        switch(type) {
+            case 'success': iconClass += 'fa-check-circle'; break;
+            case 'error': iconClass += 'fa-times-circle'; break;
+            case 'warning': iconClass += 'fa-exclamation-triangle'; break;
+            default: iconClass += 'fa-info-circle'; break;
+        }
+        icon.innerHTML = `<i class="${iconClass}"></i>`;
+        
+        notification.appendChild(icon);
+        notification.appendChild(text);
+
+        const closeBtn = document.createElement('button');
+        closeBtn.innerHTML = '&times;';
+        closeBtn.className = 'notification-close-btn';
+        closeBtn.onclick = () => notification.remove();
+        notification.appendChild(closeBtn);
+        
+        document.body.appendChild(notification);
+        setTimeout(() => {
+            if (notification) notification.remove();
+        }, 5000);
+    }
+
+</script>
+</body>
+</html>
