@@ -63,8 +63,8 @@ pip (Python)
 bash
 Copier
 Modifier
-git clone https://github.com/ahmatissa08/RAG.git
-cd RAG
+git clone https://github.com/ahmatissa08/SoutenanceIAMBIG3.git
+cd SoutenanceIAMBIG3
 2. Configurer la base de données
 Lancer Apache et MySQL depuis XAMPP.
 
